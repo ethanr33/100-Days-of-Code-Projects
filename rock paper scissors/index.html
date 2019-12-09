@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <script src="public/js/main.bundle.js"></script>
+</head>
+<body>
+  <div class="game-banner">
+    <div class="move-names">
+      <p class="move-name">Rock</p>
+      <p class="move-name">Paper</p>
+      <p class="move-name">Scissors</p>
+      <p class="move-name">Lizard</p>
+      <p class="move-name">Spock</p>
+    </div>
+    <div class="scorecard">
+      <div id="score-label">SCORE</div>
+      <div id="score">0</div>
+    </div>
+  </div>
+  <div id="rules-container">
+    <div id="rules-header">
+      <p id="rules-label">RULES</p>
+      <img id="rules-exit" src="images/icon-close.svg">
+    </div>
+    <img src="images/image-rules-bonus.svg" id="rules-img">
+  </div>
+  <div id="results-view-container">
+    <div id="player-pick-container" class="pick-container">
+      <p id="player-pick-label" class="results-text">You picked:</p>
+      <div id="pick-icon-container" class="button-container">
+        <div id="pick-icon-overlay" class="button-overlay">
+          <img src="images/icon-rock.svg" id="pick-icon" class="button-icon" alt="Your pick">
+        </div>
+      </div>
+    </div>
+    <div id="results-text-container">
+      <p id="results">YOU WIN!</p>
+      <button id="redo">PLAY AGAIN</button>
+    </div>
+    <div id="com-pick-container" class="pick-container">
+      <p id="com-pick-label" class="results-text">The house picked:</p>
+      <div id="com-icon-container" class="button-container">
+        <div id="com-icon-overlay" class="button-overlay">
+          <img src="images/icon-rock.svg" id="com-icon" class="button-icon" alt="Your pick">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="game-container">
+    <img src="images/bg-pentagon.svg" id="pentagon" alt="background pentagon">
+    <div id="rock-button-container" class="rock-button-container button-chooser-container">
+      <div id="rock-button-overlay" class="button-overlay">
+        <img src="images/icon-rock.svg" id="rock-button" class="button-icon-selector button-icon" alt="rock-button">
+      </div>
+    </div>
+    <div id="paper-button-container" class="paper-button-container button-chooser-container">
+      <div id="paper-button-overlay" class="button-overlay">
+        <img src="images/icon-paper.svg" id="paper-button" class="button-icon-selector button-icon" alt="paper-button">
+      </div>
+    </div>
+    <div id="scissors-button-container" class="scissors-button-container button-chooser-container">
+      <div id="scissors-button-overlay" class="button-overlay">
+        <img src="images/icon-scissors.svg" id="scissors-button" class="button-icon-selector button-icon" alt="scissors-button">
+      </div>
+    </div>
+    <div id="lizard-button-container" class="lizard-button-container button-chooser-container">
+      <div id="lizard-button-container" id="lizard-button-overlay" class="button-overlay">
+        <img src="images/icon-lizard.svg" id="lizard-button" class="button-icon-selector button-icon" alt="scissors-button">
+      </div>
+    </div>
+    <div id="spock-button-container" class="spock-button-container button-chooser-container">
+      <div id="spock-button-overlay" class="button-overlay">
+        <img src="images/icon-spock.svg" id="spock-button" class="button-icon-selector button-icon" alt="scissors-button">
+      </div>
+    </div>
+  </div>
+  <div id="rules-button-container">
+    RULES
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://ethanroos.website">Ethan Roos</a>.
+  </div>
+</body>
+</html>
