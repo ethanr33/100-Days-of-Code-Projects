@@ -9,6 +9,37 @@
   </head>
   <body>
     <canvas id="canvas" width="640px" height="320px"></canvas>
-    <button id="start">Start Emulator</button>
+    <div id="emu-controls">
+      <button id="start">Start Emulator</button>
+      <button id="stop">Stop Emulator</button>
+    </div>
+    <div id="chooser-container">
+      <select id="game-chooser" name="game">
+        <option value="15puzzle">15PUZZLE</option>
+        <option value="blinky">BLINKY</option>
+        <option value="blitz">BLITZ</option>
+        <option value="brix">BRIX</option>
+        <option value="connect4">CONNECT4</option>
+        <option value="guess">GUESS</option>
+        <option value="hidden">HIDDEN</option>
+        <option value="invaders">INVADERS</option>
+        <option value="kaleid">KALEID</option>
+        <option value="maze">MAZE</option>
+        <option value="merlin">MERLIN</option>
+        <option value="missile">MISSILE</option>
+        <option value="pong">PONG</option>
+        <option value="pong2">PONG2</option>
+        <option value="puzzle">PUZZLE</option>
+        <option value="syzygy">SYZYGY</option>
+        <option value="tank">TANK</option>
+        <option value="tetris">TETRIS</option>
+        <option value="tictac">TICTAC</option>
+        <option value="ufo">UFO</option>
+        <option value="vbrix">VBRIX</option>
+        <option value="vers">VERS</option>
+        <option value="wipeoff">WIPEOFF</option>
+      </select>
+    </div>
+    <h1 id="feedback"></h1>
   </body>
 </html>

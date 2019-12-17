@@ -9,3 +9,21 @@ body {
   top: 10%;
   left: 30%;
 }
+
+#emu-controls {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+}
+
+#feedback {
+  position: absolute;
+  left: 43%;
+  top: 65%
+}
+
+#chooser-container {
+  position: absolute;
+  left: 48%;
+  top: 60%;
+}

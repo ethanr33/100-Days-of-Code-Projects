@@ -2,12 +2,10 @@
 window.onload = () => {
   
   const startButton = document.getElementById("start");
-  
-  startButton.addEventListener("click", () => {
-    Tone.start();
-    let chip8 = new Chip8();
-    chip8.start();
-  })
+  const stopButton = document.getElementById("stop");
+  const gameChooser = document.getElementById("game-chooser");
+  const feedback = document.getElementById("feedback");
+
   
   class Chip8 {
     constructor() {
@@ -22,15 +20,17 @@ window.onload = () => {
       this.delayTimer = new DelayTimer();
       this.soundTimer = new SoundTimer();
             
-      this.loadedProgram = "";
+      this.loadedProgram = "dd";
       
       this.isRunning = false;
       this.isWaiting = false;
           
     }
     start() {
+      this.reset();
+      this.loadGame(this.loadedProgram);
       this.isRunning = true;
-      this.loadGame("roms/TETRIS");
+      this.isWaiting = false;
       setInterval(() => {
         if (this.isRunning) {
           this.cycle();
@@ -42,6 +42,23 @@ window.onload = () => {
         this.CPU.cycle();
         this.display.drawScreen();
       }
+    }
+    stop() {
+      this.reset();
+      this.display.clearScreen();
+      this.display.drawScreen();
+    }
+    reset() {
+      this.isRunning = false;
+      this.isWaiting = true;
+      this.CPU.resetCPU();
+      this.display.clearScreen();
+      this.display.drawScreen();
+      this.keyboard.keyStatuses.forEach(status => {
+        status = false;
+      })
+      this.soundTimer.reset();
+      this.delayTimer.timer = 0;
     }
     loadGame(game) {
       var req = new XMLHttpRequest();
@@ -68,7 +85,6 @@ window.onload = () => {
              }
              self.CPU.RAM[0x200 + i] = value;
            }
-           console.log(self.CPU.RAM);
        };
        req.onerror = function () {
            console.error('Could not load ROM file');
@@ -83,9 +99,8 @@ window.onload = () => {
       this.chip8 = chip8;
       
       this.RAM = new Array(0x1000);
-      this.clearRAM();
       
-      this.V = new Array(0x10);
+      this.V = new Array(16);
       this.V.fill(0);
       
       this.I = 0x0000;
@@ -93,25 +108,25 @@ window.onload = () => {
       this.programStart = 0x200;
       
       this.PC = this.programStart;
-      this.SP = 0x00;
+      this.SP = 0x0;
       
       this.stack = new Array(16);
       this.stack.fill(0);
-      
-      this.resetCPU();
-      
-    }
-    clearRAM() {
-      this.RAM.forEach(code => {
-        code = "";
-      })
+            
     }
     resetCPU() {
-      this.clearRAM();
-      
-      this.V.fill("00");
-      
-      this.stack.fill(0);
+      for (let i = 0; i < 4096; i++) {
+        this.RAM[i] = "00";
+      }
+      for (let i = 0; i < 16; i++) {
+        this.V[i] = "00";
+      }
+      for (let i = 0; i < 16; i++) {
+        this.stack[i] = 0;
+      }
+      this.I = 0;
+      this.SP = 0;
+      this.PC = this.programStart;
       
       this.generateNumberSprites();
     }
@@ -216,17 +231,13 @@ window.onload = () => {
     cycle() {
       let curCode = this.RAM[this.PC] + this.RAM[this.PC + 1];
       this.runCommandFromCode(curCode);
-      console.log(this.PC, curCode, this.SP, this.I, this.V);
+      //console.log(this.PC, curCode, this.SP, this.I, this.V)
       if (this.SP > 15) {
         this.chip8.isRunning = false;
         throw new Error("Call stack size exceeded");
       }
-      for (let i = 0; i < this.V.length; i++) {
-        let curRegister = this.V[i];
-        while(curRegister > 255) {
-          curRegister -= 255;
-        }
-        this.V[i] = parseInt(curRegister, 16).toString(16);
+      for (let i = 0; i < this.V.length; i++) {  
+        this.V[i] = this.V[i].substr(-2);
       }
       this.PC += 2;
     }
@@ -244,9 +255,9 @@ window.onload = () => {
       } else if (code.charAt(0) == "2") {
         this.SP++;
         this.stack.push(this.PC);
-        this.PC = (256 * arg1) + (16 * arg2) + arg3;
+        this.PC = parseInt(arg1.toString(16) + arg2.toString(16) + arg3.toString(16), 16) - 2;
       } else if (code.charAt(0) == "3") {
-        if (parseInt(this.V[arg1], 16) == parseInt(arg2.toString(16) + arg3.toString(16), 16)) {
+        if (parseInt(this.V[arg1], 16) == (16 * arg2) + arg3) {
           this.PC += 2;
         }
       } else if (code.charAt(0) == "4") {
@@ -258,7 +269,7 @@ window.onload = () => {
           this.PC += 2;
         }
       } else if (code.charAt(0) == "6") {
-        this.V[arg1] = arg2.toString(16) + arg3.toString(16)
+        this.V[arg1] = ((16 * arg2) + arg3).toString(16);
       } else if (code.charAt(0) == "7") {
         this.V[arg1] = (parseInt(arg2.toString(16) + arg3.toString(16), 16) + parseInt(this.V[arg1], 16)).toString(16);
       } else if (code.charAt(0) == "8" && code.charAt(3) == "0") {
@@ -271,43 +282,44 @@ window.onload = () => {
         this.V[arg1] = (parseInt(this.V[arg1], 16) ^ parseInt(this.V[arg2], 16)).toString(16);
       } else if (code.charAt(0) == "8" && code.charAt(3) == "4") {
         let sum = parseInt(this.V[arg1], 16) + parseInt(this.V[arg2], 16);
-        if (sum > 255) {
-          sum -= 255;
+        if (sum > 0xff) {
           this.V[15] = "01";
         }
-        this.V[arg1] = sum.toString(16);
+        this.V[arg1] = (sum & 0xFF).toString(16);
       } else if (code.charAt(0) == "8" && code.charAt(3) == "5") {
         let diff = parseInt(this.V[arg1], 16) - parseInt(this.V[arg2], 16);
-        if (diff > 0) {
-          this.V[15] = "01";
-        } else {
+        if (diff < 0) {
+          diff += 256;
           this.V[15] = "00";
+        } else {
+          this.V[15] = "01";
         }
-        this.V[arg1] = diff.toString(16);
+        this.V[arg1] = (diff & 0xff).toString(16);
       } else if (code.charAt(0) == "8" && code.charAt(3) == "6") {
         if (parseInt(this.V[arg1], 16) % 2 == 1) {
           this.V[15] = "01";
         } else {
           this.V[15] = "00";
         }
-        this.V[arg1] = (parseInt(this.V[arg1], 16) / 2, 16).toString(16)
+        this.V[arg1] = ((parseInt(this.V[arg1], 16) >> 1) & 0xFF).toString(16)
       } else if (code.charAt(0) == "8" && code.charAt(3) == "7") {
         let diff = parseInt(this.V[arg2], 16) - parseInt(this.V[arg1], 16);
-        if (diff > 0) {
-          this.V[15] = "01";
-        } else {
+        if (diff < 0) {
+          diff += 256;
           this.V[15] = "00";
+        } else {
+          this.V[15] = "01";
         }
-        this.V[arg1] = diff.toString(16);
+        this.V[arg1] = (diff & 0xff).toString(16);
       } else if (code.charAt(0) == "8" && code.charAt(3).toLowerCase() == "e") {
-        if (Math.log2(parseInt(this.V[arg1], 16)) >= 8) {
+        if (Math.log2(parseInt(this.V[arg1], 16)) >= 7) {
           this.V[15] = "01";
         } else {
           this.V[15] = "00";
         }
-        this.V[arg1] = (parseInt(this.V[arg1], 16) * 2, 16).toString(16);
+        this.V[arg1] = ((parseInt(this.V[arg1], 16) * 2) & 0xFF).toString(16);
       } else if (code.charAt(0) == "9") {
-        if (this.V[arg1] != this.V[arg2]) {
+        if (parseInt(this.V[arg1], 16) != parseInt(this.V[arg2], 16)) {
           this.PC += 2;
         }
       } else if (code.charAt(0).toLowerCase() == "a") {
@@ -316,7 +328,7 @@ window.onload = () => {
         this.PC = (256 * arg1) + (16 * arg2) + arg3 + parseInt(this.V[0], 16);
       } else if (code.charAt(0).toLowerCase() == "c") {
         let rand = Math.floor((Math.random() * 256));
-        this.V[arg1] = (parseInt((16 * arg2) + arg3, 16) & rand).toString(16);
+        this.V[arg1] = (((16 * arg2) + arg3) & rand).toString(16);
       } else if (code.charAt(0).toLowerCase() == "d") {
         let x = parseInt(this.V[arg1], 16);
         let y = parseInt(this.V[arg2], 16);
@@ -329,7 +341,6 @@ window.onload = () => {
         
         for (let i = 0; i < arg3; i++) {
           x = parseInt(this.V[arg1], 16);
-          y = y % 32;
           let rowVal = parseInt(this.RAM[memIndex], 16).toString(2).padStart(8, "0");
           for (let j = 0; j < 8; j++) {
               x = x % 64;
@@ -340,17 +351,18 @@ window.onload = () => {
               }
               x++;
           }
+          y = y % 32;
           y++;
           memIndex++;
         }
       } else if (code.charAt(0).toLowerCase() == "e" && code.substring(2, 4).toLowerCase() == "9e") {
         let keyIndex = parseInt(this.V[arg1], 16);
-        if (this.chip8.keyboard.keyStatuses[keyIndex] == true) {
+        if (this.chip8.keyboard.keyStatuses[keyIndex]) {
           this.PC += 2;
         }
       } else if (code.charAt(0).toLowerCase() == "e" && code.substring(2, 4).toLowerCase() == "a1") {
         let keyIndex = parseInt(this.V[arg1], 16);
-        if (this.chip8.keyboard.keyStatuses[keyIndex] != true) {
+        if (!this.chip8.keyboard.keyStatuses[keyIndex]) {
           this.PC += 2;
         }
       } else if (code.charAt(0).toLowerCase() == "f" && code.substring(2, 4) == "07") {
@@ -359,37 +371,39 @@ window.onload = () => {
         this.chip8.isWaiting = true;
         
         let keyPressed;
-        
-        console.log("waiting...");
-        
+                
         setInterval(() => {
-          if (this.chip8.isWaiting) {
+          if (this.chip8.isWaiting && this.chip8.isRunning) {
             for (let i = 0; i < this.chip8.keyboard.keyStatuses.length; i++) {
               let curKey = this.chip8.keyboard.keyStatuses[i];
               if (curKey) {
                 keyPressed = i;
                 this.V[arg1] = keyPressed.toString(16);
                 this.chip8.isWaiting = false;
-                console.log("got it!");
               }
             }
           }
-        }, 1/60);
+        }, 1/500);
                 
       } else if (code.charAt(0).toLowerCase() == "f" && code.substring(2, 4) == "15") {
         this.chip8.delayTimer.timer = parseInt(this.V[arg1], 16);
       } else if (code.charAt(0).toLowerCase() == "f" && code.substring(2, 4) == "18") {
         this.chip8.soundTimer.timer = parseInt(this.V[arg1], 16);
       } else if (code.charAt(0).toLowerCase() == "f" && code.substring(2, 4).toLowerCase() == "1e") {
-        this.I = this.I + parseInt(this.V[arg1], 16);
+        this.I = (this.I + parseInt(this.V[arg1], 16));
+        if (this.I > 0xFF) {
+          this.V[15] = "01";
+        } else {
+          this.V[15] = "00";
+        }
       } else if (code.charAt(0).toLowerCase() == "f" && code.substring(2, 4) == "29") {
         this.I = 5 * parseInt(this.V[arg1], 16);
       } else if (code.charAt(0).toLowerCase() == "f" && code.substring(2, 4) == "33") {
         let num = parseInt(this.V[arg1], 16);
         
-        let hundreds = Math.floor(num / 100).toString(16);
-        let tens = Math.floor((num % 100) / 10).toString(16);
-        let ones = (num % 10).toString(16);
+        let hundreds = Math.floor(num / 100);
+        let tens = Math.floor((num % 100) / 10);
+        let ones = (num % 10);
         
         this.RAM[this.I] = hundreds.toString(16);
         this.RAM[this.I + 1] = tens.toString(16);
@@ -465,102 +479,102 @@ window.onload = () => {
 
     }
     activateKeys(e) {
-      if (e.which == 65) {
+      if (e.which == 49) {
         this.keyStatuses[0] = true;
       }
-      if (e.which == 83) {
+      if (e.which == 50) {
         this.keyStatuses[1] = true;
       }
-      if (e.which == 68) {
+      if (e.which == 51) {
         this.keyStatuses[2] = true;
       }
-      if (e.which == 70) {
+      if (e.which == 52) {
         this.keyStatuses[3] = true;
       }
-      if (e.which == 71) {
+      if (e.which == 81) {
         this.keyStatuses[4] = true;
       }
-      if (e.which == 72) {
+      if (e.which == 87) {
         this.keyStatuses[5] = true;
       }
-      if (e.which == 74) {
+      if (e.which == 69) {
         this.keyStatuses[6] = true;
       }
-      if (e.which == 75) {
+      if (e.which == 82) {
         this.keyStatuses[7] = true;
       }
-      if (e.which == 76) {
+      if (e.which == 65) {
         this.keyStatuses[8] = true;
       }
-      if (e.which == 90) {
+      if (e.which == 83) {
         this.keyStatuses[9] = true;
       }
-      if (e.which == 88) {
+      if (e.which == 68) {
         this.keyStatuses[10] = true;
       }
-      if (e.which == 67) {
+      if (e.which == 70) {
         this.keyStatuses[11] = true;
       }
-      if (e.which == 86) {
+      if (e.which == 90) {
         this.keyStatuses[12] = true;
       }
-      if (e.which == 66) {
+      if (e.which == 88) {
         this.keyStatuses[13] = true;
       }
-      if (e.which == 78) {
+      if (e.which == 67) {
         this.keyStatuses[14] = true;
       }
-      if (e.which == 77) {
+      if (e.which == 86) {
           this.keyStatuses[15] = true;
       }      
     }
     deactivateKeys(e) {
-        if (e.which == 65) {
+        if (e.which == 49) {
             this.keyStatuses[0] = false;
         }
-        if (e.which == 83) {
+        if (e.which == 50) {
             this.keyStatuses[1] = false;
         }
-        if (e.which == 68) {
+        if (e.which == 51) {
             this.keyStatuses[2] = false;
         }
-        if (e.which == 70) {
+        if (e.which == 52) {
             this.keyStatuses[3] = false;
         }
-        if (e.which == 71) {
+        if (e.which == 81) {
             this.keyStatuses[4] = false;
         }
-        if (e.which == 72) {
+        if (e.which == 87) {
             this.keyStatuses[5] = false;
         }
-        if (e.which == 74) {
+        if (e.which == 69) {
             this.keyStatuses[6] = false;
         }
-        if (e.which == 75) {
+        if (e.which == 82) {
             this.keyStatuses[7] = false;
         }
-        if (e.which == 76) {
+        if (e.which == 65) {
             this.keyStatuses[8] = false;
         }
-        if (e.which == 90) {
+        if (e.which == 83) {
             this.keyStatuses[9] = false;
         }
-        if (e.which == 88) {
+        if (e.which == 68) {
             this.keyStatuses[10] = false;
         }
-        if (e.which == 67) {
+        if (e.which == 70) {
             this.keyStatuses[11] = false;
         }
-        if (e.which == 86) {
+        if (e.which == 90) {
             this.keyStatuses[12] = false;
         }
-        if (e.which == 66) {
+        if (e.which == 88) {
             this.keyStatuses[13] = false;
         }
-        if (e.which == 78) {
+        if (e.which == 67) {
             this.keyStatuses[14] = false;
         }
-        if (e.which == 77) {
+        if (e.which == 86) {
             this.keyStatuses[15] = false;
         }      
     }
@@ -602,6 +616,10 @@ window.onload = () => {
       }, this.timerRate);
       
     }
+    reset() {
+      this.isSoundPlaying = false;
+      this.timer = 0;
+    }
     playSound() {
       this.synth.triggerAttack("C4");
     }
@@ -609,5 +627,94 @@ window.onload = () => {
       this.synth.triggerRelease();
     }
   }
+  
+  let chip8 = new Chip8();
+  
+  startButton.addEventListener("click", () => {
+    if (chip8.loadedProgram != "") {
+      let selectedGame = gameChooser.selectedIndex;
+      console.log(selectedGame);
+      switch(selectedGame) {
+        case 0:
+          chip8.loadedProgram = "roms/15PUZZLE";
+          break;
+        case 1:
+          chip8.loadedProgram = "roms/BLINKY";
+          break;
+        case 2:
+          chip8.loadedProgram = "roms/BLITZ";
+          break;
+        case 3:
+          chip8.loadedProgram = "roms/BRIX";
+          break;
+        case 4:
+          chip8.loadedProgram = "roms/CONNECT4";
+          break;
+        case 5:
+          chip8.loadedProgram = "roms/GUESS";
+          break;
+        case 6:
+          chip8.loadedProgram = "roms/HIDDEN";
+          break;
+        case 7:
+          chip8.loadedProgram = "roms/INVADERS";
+          break;
+        case 8:
+          chip8.loadedProgram = "roms/KALEID";
+          break;
+        case 9:
+          chip8.loadedProgram = "roms/MAZE";
+          break;
+        case 10:
+          chip8.loadedProgram = "roms/MERLIN";
+          break;
+        case 11:
+          chip8.loadedProgram = "roms/MISSILE";
+          break;
+        case 12:
+          chip8.loadedProgram = "roms/PONG";
+          break;
+        case 13:
+          chip8.loadedProgram = "roms/PONG2";
+          break;
+        case 14:
+          chip8.loadedProgram = "roms/PUZZLE";
+          break;
+        case 15:
+          chip8.loadedProgram = "roms/SYZYGY";
+          break;
+        case 16:
+          chip8.loadedProgram = "roms/TANK";
+          break;
+        case 17:
+          chip8.loadedProgram = "roms/TETRIS";
+          break;
+        case 18:
+          chip8.loadedProgram = "roms/TICTAC";
+          break;
+        case 19:
+          chip8.loadedProgram = "roms/UFO";
+          break;
+        case 20:
+          chip8.loadedProgram = "roms/VBRIX";
+          break;
+        case 21:
+          chip8.loadedProgram = "roms/VERS";
+          break;
+        case 22:
+          chip8.loadedProgram = "roms/WIPEOFF";
+          break;
+      }
+      feedback.innerHTML = "";
+      Tone.start();
+      chip8.start();
+    } else {
+      feedback.innerHTML = "Please select a game";
+    }
+  })
+  
+  stopButton.addEventListener("click", () => {
+    chip8.stop();
+  })
   
 }
