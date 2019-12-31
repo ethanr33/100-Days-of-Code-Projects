@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Frontend Mentor | Pricing Component</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; position: relative; bottom: 0; margin: 10px 0; margin-top: 40px}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha256-FiZMk1zgTeujzf/+vomWZGZ9r00+xnGvOgXoj0Jo1jA=" crossorigin="anonymous"></script>
+  <script src="public/js/script.js" type="text/babel"></script>
+</head>
+<body>
+  <img src="images/bg-bottom.svg" id="bg-bottom">
+  <img src="images/bg-top.svg" id="bg-top">
+  <header>
+    <h1>Our Pricing</h1>
+    <div id="plan-type-selector-div">
+      <p class="type-selector-label">Monthly</p>
+      <div id="toggle-switch">
+        <div id="toggle-switch-button"></div>
+      </div>
+      <p class="type-selector-label">Annually</p>
+    </div>
+  </header>
+  <main>
+    <div class="plan-container" id="basic-plan">
+      <p class="plan-type-label">Basic</p>
+      <p class="plan-price" id="plan-price-basic">19.99</p>
+      <hr />
+      <p class="plan-desc">500GB Storage</p>
+      <hr />
+      <p class="plan-desc">2 Users Allowed</p>
+      <hr />
+      <p class="plan-desc">Send up to 3GB</p>
+      <hr />
+      <div class="button-container">
+        <button class="learn-more">Learn More</button>
+      </div>    
+    </div>
+    <div class="plan-container highlighted">
+      <p class="plan-type-label">Professional</p>
+      <p class="plan-price" id="plan-price-pro">24.99</p>
+      <hr />
+      <p class="plan-desc">1TB Storage</p>
+      <hr />
+      <p class="plan-desc">5 Users Allowed</p>
+      <hr />
+      <p class="plan-desc">Send up to 10GB</p>
+      <hr />
+      <div class="button-container">
+        <button class="learn-more">Learn More</button>
+      </div>    
+    </div>
+    <div class="plan-container" id="master-plan">
+      <p class="plan-type-label" id="bottom-container">Master</p>
+      <p class="plan-price" id="plan-price-master">39.99</p>
+      <hr />
+      <p class="plan-desc">2TB Storage</p>
+      <hr />
+      <p class="plan-desc">10 Users Allowed</p>
+      <hr />
+      <p class="plan-desc">Send up to 20GB</p>
+      <hr />
+      <div class="button-container">
+        <button class="learn-more">Learn More</button>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://ethanroos.website">Ethan Roos</a>.
+  </footer>
+</body>
+</html>

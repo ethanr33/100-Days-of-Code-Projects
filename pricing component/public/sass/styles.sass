@@ -1,0 +1,235 @@
+
+$background-main: hsl(240, 78%, 98%)
+$main-font: "Monsterrat", sans-serif
+
+@mixin default-text
+  color: hsl(232, 13%, 33%)
+  font-family: $main-font
+  font-weight: 700
+  font-size: 15px
+  
+@mixin plan-container
+  width: 95%
+  margin: 0 2.5%
+  @media only screen and (min-width: 450px)
+    width: 90%
+    margin: 5%
+  @media only screen and (min-width: 600px)
+    width: 80%
+    margin: 5% 10%
+  @media only screen and (min-width: 800px)
+    width: 70%
+    margin: 5% 15%
+  @media only screen and (min-width: 950px)
+    width: auto
+    padding: 0 5%
+    margin: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-color: white
+  border-radius: 8px
+  margin: 5% 0
+  -webkit-box-shadow: 0px 6px 8px -6px rgba(0,0,0,0.37)
+  -moz-box-shadow: 0px 6px 8px -6px rgba(0,0,0,0.37)
+  box-shadow: 0px 6px 8px -6px rgba(0,0,0,0.37)
+
+@mixin highlighted-plan-container
+  background: linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%))
+  p, h1
+    color: hsl(240, 78%, 98%)
+  .learn-more
+    background: white
+    color: hsl(237, 63%, 64%)
+  width: 95%
+  margin: 0 2.5%
+  @media only screen and (min-width: 450px)
+    width: 90%
+    margin: 5%
+  @media only screen and (min-width: 600px)
+    width: 80%
+    margin: 5% 10%
+  @media only screen and (min-width: 800px)
+    width: 70%
+    margin: 5% 15%
+  @media only screen and (min-width: 950px)
+    width: auto
+    padding: 2.5% 7.5%
+    margin: 0
+  display: flex
+  flex-direction: column 
+  align-items: center
+  border-radius: 8px
+  margin: 5% 0
+  -webkit-box-shadow: 0px 6px 8px -6px rgba(0,0,0,0.37)
+  -moz-box-shadow: 0px 6px 8px -6px rgba(0,0,0,0.37)
+  box-shadow: 0px 6px 8px -6px rgba(0,0,0,0.37)
+  
+body
+  margin: 0
+  overflow-x: hidden
+  max-height: 100%
+  #basic-plan
+    @media only screen and (min-width: 950px)
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+  #master-plan
+    @media only screen and (min-width: 950px)
+      border-top-left-radius: 0px
+      border-bottom-left-radius: 0px
+  #bg-bottom
+    position: absolute
+    z-index: -10
+    bottom: 0
+    @media only screen and (max-width: 950px)
+      display: none
+  #bg-top
+    width: 70%
+    position: absolute
+    top: 0
+    right: -30%
+    z-index: -10
+    transform: scaleX(-1)
+    @media only screen and (min-width: 950px)
+      width: 20%
+      right: 0
+  background: $background-main
+  @include default-text
+  header
+    h1
+      text-align: center
+      font-size: 44px
+      @media only screen and (min-width: 950px)
+        padding-top: 1%
+      font-weight: 700
+      color: hsl(232, 13%, 33%)
+    #plan-type-selector-div
+      width: 70%
+      margin: 0 15%
+      @media only screen and (min-width: 600px)
+        width: 50%
+        margin: 0 25%
+      @media only screen and (min-width: 800px)
+        width: 40%
+        margin: 0 30%
+      @media only screen and (min-width: 950px)
+        width: 30%
+        margin: 0 35%
+      @media only screen and (min-width: 1200px)
+        width: 20%
+        margin: 0 40%
+      margin-bottom: 10%
+      @media only screen and (min-width: 600px)
+        margin-bottom: 5%
+      @media only screen and (min-width: 800px)
+        margin-bottom: 2.5%
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      align-items: center
+    .type-selector-label
+      color: hsl(234, 14%, 74%)
+    #toggle-switch 
+      display: block
+      background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%))
+      width: 45px
+      height: 28px
+      @media only screen and (min-width: 450px)
+        width: 55px
+      border-radius: 20px
+    #toggle-switch #toggle-switch-button
+      background-color: white
+      display: block
+      width: 21px
+      height: 21px
+      margin-top: 3.5px
+      transform: translateX(3px)
+      border-radius: 50%
+  .plan-container
+    @include plan-container
+  .plan-container.highlighted
+    @include highlighted-plan-container
+    hr 
+      border: 0
+      height: 1px
+      background: white
+      @media only screen and (min-width: 950px)
+        width: 130%
+  .plan-type-label
+    padding-top: 5%
+    font-size: 18px
+    color: hsl(233, 13%, 49%)
+  .dollar-sign
+    font-size: 20px
+  .plan-price
+    font-size: 70px
+    margin: 5% 0
+  .plan-desc
+    color: hsl(233, 13%, 49%)
+  .plan-price::before 
+    font-size: 34px
+    content: "$"
+  .button-container
+    width: 85%
+  .learn-more
+    margin: 10% auto
+    width: 100%
+    height: 46px
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%))
+    border: none
+    border-radius: 6px
+    color: hsl(240, 78%, 98%)
+    font-family: $main-font
+    font-size: 16px
+    font-weight: 700
+    letter-spacing: 1.5px
+  hr 
+    margin-left: 0
+    margin-right: 0
+    width: 85%
+  main 
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media only screen and (min-width: 950px)
+      width: 70%
+      margin: 0 15%
+      flex-direction: row
+      justify-content: center
+    @media only screen and (min-width: 1150px)
+      width: 80%
+      margin: 0 10%
+  .toggle-annual
+    animation-name: toggle-annual
+    animation-duration: 0.4s
+    animation-fill-mode: forwards
+  .toggle-monthly
+    animation-name: toggle-monthly
+    animation-duration: 0.4s
+    animation-fill-mode: forwards
+    
+@keyframes toggle-annual
+  0%
+    transform: translateX(3px)
+  100%
+    transform: translateX(21px)
+    
+@keyframes toggle-monthly
+  0%
+    transform: translateX(21px)
+  100%
+    transform: translateX(3px)
+    
+@media only screen and (min-width: 450px) 
+  @keyframes toggle-annual
+    0%
+      transform: translateX(3px)
+    100%
+      transform: translateX(31px)
+      
+  @keyframes toggle-monthly
+    0%
+      transform: translateX(31px)
+    100%
+      transform: translateX(3px)
+
