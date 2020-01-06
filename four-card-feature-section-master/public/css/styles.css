@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+}
+body #feature-info-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15%;
+  margin-top: 12.5%;
+}
+@media only screen and (min-width: 950px) {
+  body #feature-info-container {
+    margin-top: 6%;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  body #feature-info-container {
+    width: 50%;
+    margin: 0 25%;
+    margin-top: 5%;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  body #feature-info-container {
+    width: 35%;
+    margin: 0 32.5%;
+    margin-top: 4%;
+  }
+}
+body #feature-info-container #feature-title-container .feature-info-header {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #4c4e61;
+  font-family: "Poppins";
+  font-size: 24px;
+}
+body #feature-info-container #feature-desc-container {
+  text-align: center;
+  color: #a3a5ae;
+  font-family: "Poppins";
+  font-size: 15px;
+}
+body #feature-cards-container {
+  width: 80%;
+  margin: 0 10%;
+}
+@media only screen and (min-width: 950px) {
+  body #feature-cards-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 5%;
+  }
+}
+@media only screen and (min-width: 1350px) {
+  body #feature-cards-container {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+body #feature-cards-container .feature-card {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 15% 0;
+  padding: 5%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 9px 15px 5px rgba(205, 205, 205, 0.7);
+  box-shadow: 0px 9px 15px 5px rgba(205, 205, 205, 0.7);
+}
+@media only screen and (min-width: 950px) {
+  body #feature-cards-container .feature-card {
+    width: 230px;
+    height: 200px;
+    padding: 15px;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body #feature-cards-container .feature-card {
+    width: 280px;
+    padding: 25px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body #feature-cards-container .feature-card {
+    width: 310px;
+  }
+}
+body #feature-cards-container .feature-card .feature-card-text .feature-title {
+  margin: 0;
+  padding: 0;
+  color: #4c4e61;
+  font-family: "Poppins";
+  font-size: 22px;
+}
+body #feature-cards-container .feature-card .feature-card-text .feature-desc {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #a3a5ae;
+  font-family: "Poppins";
+  font-size: 15px;
+}
+body #feature-cards-container .feature-card .feature-icon {
+  align-self: flex-end;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 950px) {
+  body #feature-cards-container .feature-card-group {
+    width: 245px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body #feature-cards-container .feature-card-group {
+    width: 305px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body #feature-cards-container .feature-card-group {
+    width: 360px;
+  }
+}
+body #feature-cards-container .feature-card-group .feature-card {
+  width: 90%;
+  padding: 5%;
+}
+@media only screen and (min-width: 950px) {
+  body #feature-cards-container .feature-card-group .feature-card {
+    width: 230px;
+    height: 200px;
+    padding: 15px;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body #feature-cards-container .feature-card-group .feature-card {
+    width: 280px;
+    padding: 25px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body #feature-cards-container .feature-card-group .feature-card {
+    width: 310px;
+  }
+}
+body #feature-cards-container #feature-card-supervisor {
+  border-top: 6px solid #45d3d3;
+}
+body #feature-cards-container #feature-card-team-builder {
+  border-top: 6px solid #ea5353;
+}
+body #feature-cards-container #feature-card-karma {
+  border-top: 6px solid #fcaf4a;
+}
+body #feature-cards-container #feature-card-calculator {
+  border-top: 6px solid #549ef2;
+}
+body .attribution {
+  font-size: 11px;
+  font-family: "Poppins";
+  text-align: center;
+}
+body .attribution {
+  color: #3e52a3;
+}
+body .bold {
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=styles.css.map */
