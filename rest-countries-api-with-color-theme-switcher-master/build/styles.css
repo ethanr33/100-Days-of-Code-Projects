@@ -1,0 +1,545 @@
+body {
+  width: 100%;
+  background-color: #fafafa;
+}
+body header {
+  width: 92%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  padding: 0.75em 4%;
+}
+body header .header-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+}
+body header .header-title.light {
+  color: #111517;
+}
+body header .header-title.dark {
+  color: white;
+}
+body header #mode-switcher {
+  width: 6.5em;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+}
+body header #mode-switcher #mode-name {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+body header #mode-switcher #mode-name.light {
+  color: #111517;
+}
+body header #mode-switcher #mode-name.dark {
+  color: white;
+}
+body header #mode-switcher .far.fa-moon {
+  font-size: 0.875rem;
+}
+body header #mode-switcher .far.fa-moon.dark {
+  color: white;
+}
+body header.light {
+  background-color: white;
+}
+body header.dark {
+  background-color: #2b3945;
+}
+body main {
+  position: absolute;
+  top: 4.5em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+body main #main-view {
+  width: 100%;
+}
+body main #main-controls {
+  width: 80%;
+  height: 8em;
+  margin: 0 10%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: left;
+          align-items: left;
+  padding-top: 1.5em;
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-controls {
+    width: 90%;
+    margin: 0 5%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+            align-items: baseline;
+  }
+}
+body main #main-controls #search-bar {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-controls #search-bar {
+    width: 30em;
+  }
+}
+body main #main-controls #country-search {
+  width: 100%;
+  height: 3.25rem;
+  padding: 0 2.75rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 5px #F5F5F5;
+  color: #858585;
+  font-family: "Nunito Sans", sans-serif;
+  outline: none;
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-controls #country-search {
+    width: 24em;
+  }
+}
+body main #main-controls #country-search.dark {
+  color: white;
+  background-color: #2b3945;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+body main #main-controls #country-search::-webkit-input-placeholder {
+  color: #858585;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search::-moz-placeholder {
+  color: #858585;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search:-ms-input-placeholder {
+  color: #858585;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search::-ms-input-placeholder {
+  color: #858585;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search::placeholder {
+  color: #858585;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search.dark::-webkit-input-placeholder {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search.dark::-moz-placeholder {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search.dark:-ms-input-placeholder {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search.dark::-ms-input-placeholder {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls #country-search.dark::placeholder {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+body main #main-controls .fas.fa-search {
+  margin-right: -2rem;
+  color: #858585;
+  font-size: 0.875rem;
+  z-index: 2;
+}
+body main #main-controls .fas.fa-search.dark {
+  color: white;
+}
+body main #main-controls #country-filter {
+  width: 16em;
+  height: 3.25rem;
+  padding: 0 2.75rem;
+  align-self: baseline;
+  margin-left: -1.15rem;
+  padding: 0 1em;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0px 0px 10px 5px #F5F5F5;
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-controls #country-filter {
+    margin-left: 0;
+  }
+}
+body main #main-controls #country-filter option {
+  height: 3.25em;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+body main #main-controls #country-filter.dark {
+  color: white;
+  background-color: #2b3945;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+body main #card-container {
+  width: 95%;
+  margin: 0 2.5%;
+}
+@media only screen and (min-width: 1000px) {
+  body main #card-container {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+body main #card-container .country-card {
+  width: 22rem;
+  height: 27rem;
+  margin: 2em auto;
+  box-shadow: 0px 0px 30px 10px #E2E2E2;
+  border-radius: 12px;
+}
+@media only screen and (min-width: 1000px) {
+  body main #card-container .country-card {
+    width: 20rem;
+    margin: 2em 1em;
+    flex-basis: 20rem;
+  }
+}
+body main #card-container .country-card .country-card-img-container {
+  height: 45%;
+}
+body main #card-container .country-card .country-card-img-container .country-card-img {
+  width: 22rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+@media only screen and (min-width: 1000px) {
+  body main #card-container .country-card .country-card-img-container .country-card-img {
+    width: 20rem;
+  }
+}
+body main #card-container .country-card .country-card-desc-container {
+  width: 100%;
+  padding: 1.25em;
+  padding-bottom: 2.5em;
+}
+body main #card-container .country-card .country-card-desc-container .card-desc {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+}
+body main #card-container .country-card .country-card-desc-container .card-desc-title {
+  margin-bottom: 1.5em;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+@media only screen and (min-width: 1000px) {
+  body main #card-container .country-card .country-card-desc-container .card-desc-title {
+    font-size: 1.05rem;
+  }
+}
+body main #card-container .country-card .country-card-desc-container .card-population::before {
+  content: "Population: ";
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+body main #card-container .country-card .country-card-desc-container .card-region::before {
+  content: "Region: ";
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+body main #card-container .country-card .country-card-desc-container .card-capital::before {
+  content: "Capital: ";
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+body main #card-container .country-card.light {
+  background-color: white;
+}
+body main #card-container .country-card.dark {
+  background-color: #2b3945;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+body main #card-container .country-card.dark .card-desc.dark {
+  color: white;
+}
+body main #card-container.dark {
+  background-color: #202c37;
+}
+body main #details-view {
+  display: none;
+  position: absolute;
+  width: 85%;
+  top: 2em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+body main #details-view #details-back-button {
+  width: 7em;
+  height: 2em;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 7px 3px #DADADA;
+}
+body main #details-view #details-back-button.light {
+  color: #111517;
+  background-color: white;
+}
+body main #details-view #details-back-button.dark {
+  color: white;
+  background-color: #2b3945;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container {
+    height: 33rem;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+}
+body main #details-container #details-flag-container {
+  width: 25em;
+  margin-top: 5em;
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-flag-container {
+    width: auto;
+    height: 20em;
+    margin: 0;
+  }
+}
+body main #details-container #details-flag-container #details-flag {
+  width: 25em;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-flag-container #details-flag {
+    width: auto;
+    height: 20em;
+  }
+}
+body main #details-container #details-flag-container.dark {
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-text-container {
+    width: 35em;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 4em;
+    margin-top: 5em;
+  }
+}
+body main #details-container #details-text-container #details-title {
+  margin-top: 1.5em;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-text-container #details-title {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+body main #details-container #details-text-container #first-detail-container {
+  padding-top: 1.5em;
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-text-container #first-detail-container {
+    padding-top: 1.5em;
+  }
+}
+body main #details-container #details-text-container #second-detail-container {
+  padding-top: 3em;
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-text-container #second-detail-container {
+    padding-top: 1.5em;
+  }
+}
+body main #details-container #details-text-container #details-title.light {
+  color: #111517;
+}
+body main #details-container #details-text-container #details-title.dark {
+  color: white;
+}
+body main #details-container #details-text-container #detail-native-name::before {
+  content: "Native name: ";
+}
+body main #details-container #details-text-container #detail-population::before {
+  content: "Population: ";
+}
+body main #details-container #details-text-container #detail-region::before {
+  content: "Region: ";
+}
+body main #details-container #details-text-container #detail-subregion::before {
+  content: "Sub-region: ";
+}
+body main #details-container #details-text-container #detail-capital::before {
+  content: "Capital: ";
+}
+body main #details-container #details-text-container #detail-domain::before {
+  content: "Top level domain: ";
+}
+body main #details-container #details-text-container #detail-currencies::before {
+  content: "Currencies: ";
+}
+body main #details-container #details-text-container #detail-lang::before {
+  content: "Languages: ";
+}
+body main #details-container #details-text-container .text-detail {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+body main #details-container #details-text-container .text-detail.light {
+  color: #111517;
+}
+body main #details-container #details-text-container .text-detail::before {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+body main #details-container #details-text-container .text-detail.dark {
+  color: white;
+}
+body main #details-container #details-text-container #border-countries-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1200px) {
+  body main #details-container #details-text-container #border-countries-container {
+    width: 100%;
+  }
+}
+body main #details-container #details-text-container #border-countries-container #border-countries {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+body main #details-container #details-text-container #border-countries-container #border-countries.dark {
+  color: white;
+}
+body main #details-container #details-text-container #border-countries-container #border-countries-title {
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+body main #details-container #details-text-container #border-countries-container #border-countries-title.dark {
+  color: white;
+}
+body main #details-container #details-text-container #border-countries-container .border-country {
+  display: inline-block;
+  margin: 1em;
+  padding: 0.85em 0.85em;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  box-shadow: 0px 0px 7px 3px #E6E6E6;
+  border-radius: 4px;
+}
+body main #details-container #details-text-container #border-countries-container .border-country.light {
+  background-color: white;
+}
+body main #details-container #details-text-container #border-countries-container .border-country.dark {
+  color: white;
+  background-color: #2b3945;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+@media only screen and (min-width: 1000px) {
+  body main {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+  }
+}
+body main #details-view.light {
+  background-color: #fafafa;
+}
+body main #details-view.dark {
+  background-color: #202c37;
+}
+body main.light {
+  background-color: #fafafa;
+}
+body main.dark {
+  background-color: #202c37;
+}
+body #main-view.light {
+  background-color: #fafafa;
+}
+body #main-view.dark {
+  background-color: #202c37;
+}
+
+body.dark {
+  background-color: #202c37;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3B1YmxpYy9zYXNzL3N0eWxlcy5zYXNzIiwiLi4vcHVibGljL2Nzcy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWVBO0VBQ0UsV0FBQTtFQUNBLHlCQVhzQjtBQ0h4QjtBRGVFO0VBQ0UsVUFBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsOEJBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0VBQ0Esa0JBQUE7QUNiSjtBRGNJO0VBQ0Usc0NBZmdCO0VBZ0JoQixnQkFBQTtBQ1pOO0FEYUk7RUFDRSxjQXhCWTtBQ2FsQjtBRFlJO0VBQ0UsWUFBQTtBQ1ZOO0FEV0k7RUFDRSxZQUFBO0VBQ0Esb0JBQUE7RUFBQSxhQUFBO0VBQ0EseUJBQUE7VUFBQSw4QkFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7QUNUTjtBRFVNO0VBQ0Usc0NBM0JjO0VBNEJkLGdCQUFBO0FDUlI7QURTTTtFQUNFLGNBcENVO0FDNkJsQjtBRFFNO0VBQ0UsWUFBQTtBQ05SO0FET007RUFDRSxtQkFoQ2E7QUMyQnJCO0FETU07RUFDRSxZQUFBO0FDSlI7QURLRTtFQUNFLHVCQUFBO0FDSEo7QURJRTtFQUNFLHlCQWpEaUI7QUMrQ3JCO0FER0U7RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxZQUFBO0FDREo7QURFSTtFQUNFLFdBQUE7QUNBTjtBRENJO0VBQ0UsVUFBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFBQSxhQUFBO0VBQ0EsNEJBQUE7RUFBQSw2QkFBQTtVQUFBLHNCQUFBO0VBQ0EseUJBQUE7VUFBQSw4QkFBQTtFQUNBLHVCQUFBO1VBQUEsaUJBQUE7RUFDQSxrQkFBQTtBQ0NOO0FEQU07RUFURjtJQVVJLFVBQUE7SUFDQSxZQUFBO0lBQ0EsOEJBQUE7SUFBQSw2QkFBQTtZQUFBLG1CQUFBO0lBQ0EseUJBQUE7WUFBQSw4QkFBQTtJQUNBLDJCQUFBO1lBQUEscUJBQUE7RUNHTjtBQUNGO0FESE07RUFDRSxvQkFBQTtFQUFBLGFBQUE7RUFDQSx3QkFBQTtVQUFBLHVCQUFBO0VBQ0EseUJBQUE7VUFBQSxtQkFBQTtFQUNBLFdBQUE7QUNLUjtBREpRO0VBTEY7SUFNSSxXQUFBO0VDT1I7QUFDRjtBRFBNO0VBQ0UsV0FBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUVBLG9DQUFBO0VBQ0EsY0FyRlc7RUFzRlgsc0NBakZjO0VBa0ZkLGFBQUE7QUNTUjtBRFJRO0VBWEY7SUFZSSxXQUFBO0VDV1I7QUFDRjtBRFhNO0VBQ0UsWUF4RkE7RUF5RkEseUJBaEdhO0VBa0diLCtDQUFBO0FDYVI7QURaTTtFQUNFLGNBaEdXO0VBaUdYLHNDQTVGYztBQzBHdEI7QURoQk07RUFDRSxjQWhHVztFQWlHWCxzQ0E1RmM7QUMwR3RCO0FEaEJNO0VBQ0UsY0FoR1c7RUFpR1gsc0NBNUZjO0FDMEd0QjtBRGhCTTtFQUNFLGNBaEdXO0VBaUdYLHNDQTVGYztBQzBHdEI7QURoQk07RUFDRSxjQWhHVztFQWlHWCxzQ0E1RmM7QUMwR3RCO0FEYk07RUFDRSxZQWhHQTtFQWlHQSxzQ0EvRmM7QUM4R3RCO0FEakJNO0VBQ0UsWUFoR0E7RUFpR0Esc0NBL0ZjO0FDOEd0QjtBRGpCTTtFQUNFLFlBaEdBO0VBaUdBLHNDQS9GYztBQzhHdEI7QURqQk07RUFDRSxZQWhHQTtFQWlHQSxzQ0EvRmM7QUM4R3RCO0FEakJNO0VBQ0UsWUFoR0E7RUFpR0Esc0NBL0ZjO0FDOEd0QjtBRGRNO0VBQ0UsbUJBQUE7RUFDQSxjQXZHVztFQXdHWCxtQkFqR2E7RUFrR2IsVUFBQTtBQ2dCUjtBRGZNO0VBQ0UsWUF4R0E7QUN5SFI7QURoQk07RUFDRSxXQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxxQkFBQTtFQUNBLGNBQUE7RUFDQSxzQ0E5R2M7RUErR2QsbUJBN0dhO0VBOEdiLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtFQUVBLG9DQUFBO0FDa0JSO0FEakJRO0VBZkY7SUFnQkksY0FBQTtFQ29CUjtBQUNGO0FEcEJRO0VBQ0UsY0FBQTtFQUNBLHNDQTFIWTtFQTJIWixtQkF6SFc7RUEwSFgsZ0JBQUE7QUNzQlY7QURyQk07RUFDRSxZQWhJQTtFQWlJQSx5QkF4SWE7RUEwSWIsK0NBQUE7QUN1QlI7QUR0Qkk7RUFDRSxVQUFBO0VBQ0EsY0FBQTtBQ3dCTjtBRHZCTTtFQUhGO0lBSUksb0JBQUE7SUFBQSxhQUFBO0lBQ0Esd0JBQUE7WUFBQSx1QkFBQTtJQUNBLGVBQUE7RUMwQk47QUFDRjtBRDFCTTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7RUFFQSxxQ0FBQTtFQUNBLG1CQUFBO0FDNEJSO0FEM0JRO0VBUEY7SUFRSSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGlCQUFBO0VDOEJSO0FBQ0Y7QUQ5QlE7RUFDRSxXQUFBO0FDZ0NWO0FEL0JVO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtLQUFBLGlCQUFBO0VBQ0EsNEJBQUE7RUFDQSw2QkFBQTtBQ2lDWjtBRGhDWTtFQU5GO0lBT0ksWUFBQTtFQ21DWjtBQUNGO0FEbkNRO0VBQ0UsV0FBQTtFQUNBLGVBQUE7RUFDQSxxQkFBQTtBQ3FDVjtBRHBDVTtFQUNFLHNDQW5LVTtFQW9LVixlQWpLUTtBQ3VNcEI7QURyQ1U7RUFDRSxvQkFBQTtFQUNBLHNDQXZLVTtFQXdLVixrQkFBQTtFQUNBLGdCQUFBO0FDdUNaO0FEdENZO0VBTEY7SUFNSSxrQkFBQTtFQ3lDWjtBQUNGO0FEekNVO0VBQ0UsdUJBQUE7RUFDQSxzQ0E5S1U7RUErS1YsZUE1S1E7RUE2S1IsZ0JBQUE7QUMyQ1o7QUQxQ1U7RUFDRSxtQkFBQTtFQUNBLHNDQW5MVTtFQW9MVixlQWpMUTtFQWtMUixnQkFBQTtBQzRDWjtBRDNDVTtFQUNFLG9CQUFBO0VBQ0Esc0NBeExVO0VBeUxWLGVBdExRO0VBdUxSLGdCQUFBO0FDNkNaO0FENUNNO0VBQ0UsdUJBOUxBO0FDNE9SO0FEN0NNO0VBQ0UseUJBdk1hO0VBeU1iLCtDQUFBO0FDK0NSO0FEOUNRO0VBQ0UsWUFBQTtBQ2dEVjtBRC9DSTtFQUNFLHlCQTVNaUI7QUM2UHZCO0FEaERJO0VBQ0UsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxZQUFBO0FDa0ROO0FEakRNO0VBQ0UsVUFBQTtFQUNBLFdBQUE7RUFDQSxzQ0FqTmM7RUFrTmQsZ0JBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFFQSxtQ0FBQTtBQ21EUjtBRGxETTtFQUNFLGNBOU5VO0VBK05WLHVCQTNOQTtBQytRUjtBRG5ETTtFQUNFLFlBQUE7RUFDQSx5QkFyT2E7RUF1T2IsK0NBQUE7QUNxRFI7QURuRE07RUFERjtJQUVJLGFBQUE7SUFDQSxvQkFBQTtJQUFBLGFBQUE7SUFDQSw2QkFBQTtJQUNBLHlCQUFBO1lBQUEsbUJBQUE7RUNzRE47QUFDRjtBRHRETTtFQUNFLFdBQUE7RUFDQSxlQUFBO0FDd0RSO0FEdkRRO0VBSEY7SUFJSSxXQUFBO0lBQ0EsWUFBQTtJQUNBLFNBQUE7RUMwRFI7QUFDRjtBRDFEUTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0Esc0JBQUE7S0FBQSxtQkFBQTtBQzREVjtBRDNEVTtFQUpGO0lBS0ksV0FBQTtJQUNBLFlBQUE7RUM4RFY7QUFDRjtBRDlETTtFQUVFLCtDQUFBO0FDZ0VSO0FEOURRO0VBREY7SUFFSSxXQUFBO0lBQ0Esb0JBQUE7SUFBQSxhQUFBO0lBQ0EseUJBQUE7WUFBQSw4QkFBQTtJQUNBLGVBQUE7SUFDQSxnQkFBQTtJQUNBLGVBQUE7RUNpRVI7QUFDRjtBRGpFUTtFQUNFLGlCQUFBO0VBQ0Esc0NBaFFZO0VBaVFaLGlCQUFBO0VBQ0EsZ0JBQUE7QUNtRVY7QURsRVU7RUFMRjtJQU1JLFdBQUE7SUFDQSxhQUFBO0lBQ0EsZ0JBQUE7RUNxRVY7QUFDRjtBRHJFUTtFQUNFLGtCQUFBO0FDdUVWO0FEdEVVO0VBRkY7SUFHSSxrQkFBQTtFQ3lFVjtBQUNGO0FEekVRO0VBQ0UsZ0JBQUE7QUMyRVY7QUQxRVU7RUFGRjtJQUdJLGtCQUFBO0VDNkVWO0FBQ0Y7QUQ3RVE7RUFDRSxjQXRSUTtBQ3FXbEI7QUQ5RVE7RUFDRSxZQXBSRjtBQ29XUjtBRC9FUTtFQUNFLHdCQUFBO0FDaUZWO0FEaEZRO0VBQ0UsdUJBQUE7QUNrRlY7QURqRlE7RUFDRSxtQkFBQTtBQ21GVjtBRGxGUTtFQUNFLHVCQUFBO0FDb0ZWO0FEbkZRO0VBQ0Usb0JBQUE7QUNxRlY7QURwRlE7RUFDRSw2QkFBQTtBQ3NGVjtBRHJGUTtFQUNFLHVCQUFBO0FDdUZWO0FEdEZRO0VBQ0Usc0JBQUE7QUN3RlY7QUR2RlE7RUFDRSxzQ0FwU1k7RUFxU1osZUFsU1U7RUFtU1YsZ0JBQUE7QUN5RlY7QUR4RlE7RUFDRSxjQTlTUTtBQ3dZbEI7QUR6RlE7RUFDRSxzQ0ExU1k7RUEyU1osZUF4U1U7RUF5U1YsZ0JBQUE7QUMyRlY7QUQxRlE7RUFDRSxZQWhURjtBQzRZUjtBRDNGUTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsOEJBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLHNDQXJUWTtFQXNUWixlQW5UVTtBQ2dacEI7QUQ1RlU7RUFSRjtJQVNJLFdBQUE7RUMrRlY7QUFDRjtBRC9GVTtFQUNFLFdBQUE7RUFDQSxvQkFBQTtFQUFBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsdUJBQUE7VUFBQSwyQkFBQTtBQ2lHWjtBRGhHVTtFQUNFLFlBalVKO0FDbWFSO0FEakdVO0VBQ0UsV0FBQTtFQUNBLHNDQWxVVTtFQW1VVixrQkFBQTtFQUNBLGdCQUFBO0FDbUdaO0FEbEdVO0VBQ0UsWUF4VUo7QUM0YVI7QURuR1U7RUFDRSxxQkFBQTtFQUNBLFdBQUE7RUFDQSxzQkFBQTtFQUNBLHNDQTNVVTtFQTRVVixrQkFBQTtFQUNBLGdCQUFBO0VBRUEsbUNBQUE7RUFDQSxrQkFBQTtBQ3FHWjtBRHBHVTtFQUNFLHVCQXBWSjtBQzBiUjtBRHJHVTtFQUNFLFlBdFZKO0VBdVZJLHlCQTlWUztFQWdXVCwrQ0FBQTtBQ3VHWjtBRHRHSTtFQS9TRjtJQWdUSSxvQkFBQTtJQUFBLGFBQUE7SUFDQSw4QkFBQTtJQUFBLDZCQUFBO1lBQUEsbUJBQUE7RUN5R0o7QUFDRjtBRHpHSTtFQUNFLHlCQWhXa0I7QUMyY3hCO0FEMUdJO0VBQ0UseUJBdFdpQjtBQ2tkdkI7QUQzR0U7RUFDRSx5QkFwV29CO0FDaWR4QjtBRDVHRTtFQUNFLHlCQTFXbUI7QUN3ZHZCO0FEN0dFO0VBQ0UseUJBeFdvQjtBQ3VkeEI7QUQ5R0U7RUFDRSx5QkE5V21CO0FDOGR2Qjs7QUQvR0E7RUFDRSx5QkFoWHFCO0FDa2V2Qjs7QURqSEE7RUFDRSxhQUFBO0FDb0hGIiwiZmlsZSI6InN0eWxlcy5jc3MifQ== */

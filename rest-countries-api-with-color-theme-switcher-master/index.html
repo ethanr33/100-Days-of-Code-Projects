@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Country App</title>
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/styles.css">
+    <script src="https://cors-anywhere.herokuapp.com/https://kit.fontawesome.com/6162bfa503.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  </head>
+  <body class="light">
+    <header class="light">
+      <p class="header-title light">Where in the world?</p>
+      <div id="mode-switcher" class="light">
+        <i id="mode-icon" class="far fa-moon light"></i>
+        <p id="mode-name" class="light">Dark Mode</p>
+      </div>
+    </header>
+    <main class="light">
+      <div id="main-view" class="light">
+        <div id="main-controls" class="light">
+          <div id="search-bar" class="light">
+            <i class="fas fa-search light"></i>
+            <input type="text" name="search" id="country-search" class="light" placeholder="Search for a country..." autocomplete="off">
+          </div>
+          <select id="country-filter" class="light" name="country-filter">
+            <option value="None">No Filter</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">North/South America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+        <div id="card-container" class="light">
+
+        </div>
+        <div id="details-view" class="light">
+          <div id="details-nav">
+            <button id="details-back-button" class="light"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
+          </div>
+          <div id="details-container">
+            <div id="details-flag-container" class="light">
+              <img id="details-flag" src="" alt="Country flag">
+            </div>
+            <div id="details-text-container">
+              <p id="details-title" class="light"></p>
+              <div id="first-detail-container" class="details-info-container light">
+                <p id="detail-native-name" class="text-detail light"></p>
+                <p id="detail-population" class="text-detail light"></p>
+                <p id="detail-region" class="text-detail light"></p>
+                <p id="detail-subregion" class="text-detail light"></p>
+                <p id="detail-capital" class="text-detail light"></p>
+              </div>
+              <div id="second-detail-container" class="details-info-container light">
+                <p id="detail-domain" class="text-detail light"></p>
+                <p id="detail-currencies" class="text-detail light"></p>
+                <p id="detail-lang" class="text-detail light"></p>
+              </div>
+              <div id="border-countries-container">
+                <p id="border-countries-title" class="light">Border Countries:</p>
+                <div id="border-countries" class="light">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/babel">            
+      //const localStorage = window.localStorage;
+      
+      const modeSwitcher = document.getElementById("mode-switcher");
+      const modeIcon = document.getElementById("mode-icon");
+      
+      const mainControls = document.getElementById("main-controls");
+      const detailsView = document.getElementById("details-view");
+      
+      const cardContainer = document.getElementById("card-container");
+      const countrySearch = document.getElementById("country-search");
+      const countryFilter = document.getElementById("country-filter");
+      
+      const countryFlagDisplay = document.getElementById("details-flag");
+      const countryNameDisplay = document.getElementById("details-title");
+      const nativeNameDisplay = document.getElementById("detail-native-name");
+      const populationDisplay = document.getElementById("detail-population");
+      const regionDisplay = document.getElementById("detail-region");
+      const subregionDisplay = document.getElementById("detail-subregion");
+      const capitalDisplay = document.getElementById("detail-capital");
+      const domainDisplay = document.getElementById("detail-domain");
+      const currenciesDisplay = document.getElementById("detail-currencies");
+      const languagesDisplay = document.getElementById("detail-lang");
+      const borderCountriesDisplay = document.getElementById("border-countries");
+      
+      const detailsBackButton = document.getElementById("details-back-button");
+        
+      let countryList = [];
+      let countryCardList = [];
+      let queriedCards = [];
+      
+      let currentQuery = "";
+      let currentFilter = "None";
+      let currentTheme = "light";
+        
+      class CountryCard extends React.Component {
+        constructor(props) {
+          super(props);
+          
+          this.handleClick = this.handleClick.bind(this);
+          this.getTheme = this.getTheme.bind(this);
+        }
+        handleClick() {
+          toggleDisplays();
+          updateDetailsWithCountry(this.props.country);
+        }
+        getTheme() {
+          return currentTheme;
+        }
+        render() {
+          return (
+            <div className={"country-card " + this.getTheme()} onClick={this.handleClick}>
+              <div className={"country-card-img-container " + this.getTheme()}>
+                <img className={"country-card-img " + this.getTheme()} src={this.props.country.flag} />
+              </div>
+              <div className={"country-card-desc-container " + this.getTheme()}>
+                <p className={"card-desc card-desc-title " + this.getTheme()}>{this.props.country.name}</p>
+                <p className={"card-desc card-population " + this.getTheme()}>{addCommas(this.props.country.population)}</p>
+                <p className={"card-desc card-region " + this.getTheme()}>{this.props.country.region}</p>
+                <p className={"card-desc card-capital " + this.getTheme()}>{this.props.country.capital}</p>
+              </div>
+            </div>
+          );
+        }
+      }
+      
+      class BorderCountryCard extends React.Component {
+        constructor(props) {
+          super(props);
+          this.getTheme = this.getTheme.bind(this);
+        }
+        getTheme() {
+          return currentTheme;
+        }
+        render() {
+          return (
+            <div className={"border-country " + this.getTheme()}>{this.props.name}</div>
+          );
+        }
+      }
+      
+      const getCountryData = (callback) => {
+        fetch("https://restcountries.eu/rest/v2/all")
+          .then(response => response.json())
+          .then(data => {
+            callback(data);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+      
+      const setCountryData = (callback) => {
+        getCountryData(data => {
+          data.forEach(country => {
+            countryList.push(country);
+          })
+          callback();
+        });
+      }
+      
+      const initCountryCards = () => {
+        countryList.forEach(country => {
+          countryCardList.push(<CountryCard key={country.numericCode} country={country} />)
+        })
+      }
+      
+      const renderCountryCards = () => {
+        ReactDOM.unmountComponentAtNode(cardContainer);
+        ReactDOM.render(countryCardList, cardContainer);
+      }
+      
+      const renderQueriedCards = () => {
+        ReactDOM.unmountComponentAtNode(cardContainer);
+        ReactDOM.render(queriedCards, cardContainer);
+        queriedCards = [];
+      }
+      
+      const searchCountryCards = (query, filter = "None") => {
+        countryCardList.forEach(card => {
+          if ((filter === "None" || card.props.country.region == filter) && card.props.country.name.toLowerCase().includes(query)) {
+            queriedCards.push(card);
+          }
+        });
+        renderQueriedCards();
+      }
+      
+      const toggleDisplays = () => {
+        if (!(mainControls.style.display == "none")) {
+          mainControls.style.display = "none"
+        } else {
+          mainControls.style.display = "flex";
+        }
+        if (!(cardContainer.style.display == "none")) {
+          cardContainer.style.display = "none"
+        } else {
+          if (document.documentElement.clientWidth >= 1000) {
+            cardContainer.style.display = "flex";
+          } else {
+            cardContainer.style.display = "block";
+          }
+        }
+        if (!(detailsView.style.display == "block")) {
+          detailsView.style.display = "block"
+        } else {
+          detailsView.style.display = "none";
+        }
+      }
+      
+      const clearBorderCountries = () => {
+        ReactDOM.unmountComponentAtNode(borderCountriesDisplay);
+      }
+      
+      const updateDetailsWithCountry = (country) => {
+        ReactDOM.unmountComponentAtNode(borderCountriesDisplay);
+        
+        countryFlagDisplay.src = country.flag;
+        countryNameDisplay.innerHTML = country.name;
+        nativeNameDisplay.innerHTML = country.nativeName;
+        populationDisplay.innerHTML = addCommas(country.population);
+        regionDisplay.innerHTML = country.region;
+        subregionDisplay.innerHTML = country.subregion;
+        capitalDisplay.innerHTML = country.capital;
+        domainDisplay.innerHTML = country.topLevelDomain.join(", ");
+        currenciesDisplay.innerHTML = listArrayProperties(country.currencies, "name");
+        languagesDisplay.innerHTML = listArrayProperties(country.languages, "name");
+        
+        let borderCountries = country.borders;
+        let borderCountryBlocks = [];
+        
+        borderCountries.forEach(cName => {
+          getCountryFullName(cName, countryName => {
+            borderCountryBlocks.push(<BorderCountryCard key={Math.floor(1000000 * Math.random())} theme={currentTheme} name={countryName} />);
+            
+            ReactDOM.unmountComponentAtNode(borderCountriesDisplay);
+            ReactDOM.render(borderCountryBlocks, borderCountriesDisplay);
+          });
+        });
+        
+        if (borderCountryBlocks.length == 0) {
+          borderCountriesDisplay.innerHTML = "No bordering countries";
+        }
+        
+      }
+      
+      const addCommas = (num) => {
+        return num.toLocaleString("arabic");
+      }
+      
+      const getCountryFullName = (country, callback) => {
+        fetch(`https://restcountries.eu/rest/v2/alpha/${country}`)
+          .then(response => response.json())
+          .then(data => {
+            callback(data.name);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+      
+      const switchMode = () => {
+        let elements = [...document.querySelectorAll(".light"), ...document.querySelectorAll(".dark")];
+        elements.forEach(element => {
+          element.classList.toggle("light");
+          element.classList.toggle("dark");
+        });
+        if (currentTheme == "light") {
+          currentTheme = "dark";
+        } else {
+          currentTheme = "light";
+        }
+      }
+      
+      //Assumes property has type of string
+      const listArrayProperties = (array, property) => {
+        let str = "";
+        let delimiter = ", ";
+        array.forEach(element => {
+          str += element[property] + delimiter;
+        });
+        return str.substring(0, str.length - delimiter.length);
+      }
+      
+      if (window.localStorage.getItem("countryList") == null) {
+        setCountryData(() => {
+          setTimeout(() => {
+            window.localStorage.setItem("countryList", JSON.stringify(countryList));
+            initCountryCards();
+            renderCountryCards();
+          }, 1000)
+        });
+      } else {
+        countryList = JSON.parse(window.localStorage.getItem("countryList"));
+        initCountryCards();
+        renderCountryCards();
+      }
+          
+      countrySearch.addEventListener("input", () => {
+        let search = countrySearch.value.toLowerCase();
+        currentQuery = search;
+        searchCountryCards(search, currentFilter);
+      });
+      
+      countryFilter.addEventListener("change", () => {
+        let regionFilter = countryFilter.value;
+        currentFilter = regionFilter;
+        searchCountryCards(currentQuery, regionFilter);
+      });
+      
+      detailsBackButton.addEventListener("click", () => {
+        toggleDisplays();
+        clearBorderCountries();
+      });
+      
+      modeSwitcher.addEventListener("click", () => {
+        switchMode();
+      });
+      
+      window.addEventListener("resize", () => {
+        if (document.documentElement.clientWidth >= 1000) {
+          cardContainer.style.display = "flex";
+        } else {
+          cardContainer.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
