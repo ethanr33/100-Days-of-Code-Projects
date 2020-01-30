@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Ping coming soon page</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:300,600,700&display=swap" rel="stylesheet">
+  <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+  <script src="https://cors-anywhere.herokuapp.com/https://kit.fontawesome.com/6162bfa503.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+  <!--<style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>-->
+  <script src="public/js/script.js"></script>
+</head>
+<body>
+  <header>
+    <!--<img id="header-logo" src="images/logo.svg" alt="PING">-->
+    <svg id="header-logo" width="86" height="26" xmlns="http://www.w3.org/2000/svg">
+      <text transform="translate(-677 -86)" fill="none" fill-rule="evenodd" font-family="LibreFranklin-Bold, Libre Franklin" font-size="32" font-weight="bold">
+        <tspan x="675" y="111" fill="#15202A">PING</tspan> 
+        <tspan x="756.312" y="111" fill="#4C7BF3">.</tspan>
+      </text>
+    </svg>
+  </header>
+  <main>
+    <div id="text-container">
+      <p id="title">We are launching </p>
+      <p id="desc">Subscribe and get notified</p>
+    </div>
+    <div id="input-container">
+      <div id="email-container">
+        <input id="user-input" type="text" placeholder="Your email address..." autocomplete="off">
+        <p id="input-feedback" class="hidden">Please provide a valid email address</p>
+      </div>
+      <button id="submit">Notify Me</button>
+    </div>
+    <img id="illustration" alt="Illustration" src="images/illustration-dashboard.png">
+    <div id="social-links">
+      <div class="link-container">
+        <i class="fab fa-facebook-f"></i>
+      </div>
+      <div class="link-container">
+        <i class="fab fa-twitter"></i>
+      </div>
+      <div class="link-container">
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p id="copyright">© Copyright Ping. All right reserved</p>
+    <!--<p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>-->
+  </footer>
+</body>
+</html>

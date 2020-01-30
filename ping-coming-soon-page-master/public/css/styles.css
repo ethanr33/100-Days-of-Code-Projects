@@ -1,0 +1,182 @@
+body {
+  max-width: 100%;
+}
+body header {
+  width: 100%;
+  padding-top: 4em;
+  padding-bottom: 3em;
+}
+@media only screen and (min-width: 1000px) {
+  body header {
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+}
+body header #header-logo {
+  display: block;
+  margin: 0 auto;
+}
+body main {
+  width: 100%;
+}
+body main #text-container {
+  text-align: center;
+  font-family: "Libre Franklin";
+}
+body main #text-container #title {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+}
+@media only screen and (min-width: 1000px) {
+  body main #text-container #title {
+    margin-bottom: 0.5em;
+    font-size: 2.5em;
+  }
+}
+body main #text-container #title::after {
+  content: "soon!";
+  font-weight: 700;
+}
+body main #text-container #desc {
+  margin: 0;
+  margin-bottom: 4em;
+  font-size: 0.8em;
+}
+@media only screen and (min-width: 1000px) {
+  body main #text-container #desc {
+    margin-bottom: 2em;
+    font-size: 1em;
+  }
+}
+body main #input-container {
+  display: block;
+  width: 20em;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1000px) {
+  body main #input-container {
+    width: 32rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+body main #input-container #email-container {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 1000px) {
+  body main #input-container #email-container {
+    flex-basis: 18em;
+    flex-grow: 6;
+    margin-right: 1em;
+  }
+}
+body main #input-container #email-container #user-input {
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 5%;
+  border-radius: 1.25em;
+  border: 1.25px solid #c2d3ff;
+  outline: none;
+  font-family: "Libre Franklin";
+  font-size: 0.85em;
+}
+body main #input-container #email-container #user-input.highlighted {
+  border: 1.25px solid #ff5263;
+}
+body main #input-container #email-container #user-input::placeholder {
+  font-family: "Libre Franklin";
+  font-size: 0.85em;
+}
+body main #input-container #email-container #input-feedback {
+  width: 100%;
+  margin: 0.45em 0;
+  margin-bottom: 2em;
+  color: #ff5263;
+  text-align: center;
+  font-family: "Libre Franklin";
+  font-size: 0.7em;
+  font-style: italic;
+}
+@media only screen and (min-width: 1000px) {
+  body main #input-container #email-container #input-feedback {
+    text-align: left;
+  }
+}
+body main #input-container #email-container #input-feedback.hidden {
+  visibility: hidden;
+}
+body main #input-container #submit {
+  width: 100%;
+  height: 2.5rem;
+  color: white;
+  font-family: "Libre Franklin";
+  font-size: 0.8em;
+  font-weight: 600;
+  background-color: #4f7df3;
+  border-radius: 1.25em;
+  border: 1px solid #4f7df3;
+  outline: none;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 1000px) {
+  body main #input-container #submit {
+    flex-basis: 10em;
+    flex-grow: 1;
+    margin-top: 0;
+  }
+}
+body main #illustration {
+  display: block;
+  width: 20rem;
+  margin: 0 auto;
+  margin-top: 5em;
+  margin-bottom: 7em;
+}
+@media only screen and (min-width: 1000px) {
+  body main #illustration {
+    width: 35rem;
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+}
+body main #social-links {
+  width: 8em;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+body main #social-links .link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  padding: 0.5em;
+  border-radius: 1.25em;
+  border: 1px solid #c2d3ff;
+}
+body main #social-links .link-container i {
+  margin: 0;
+  padding: 0;
+  color: #4f7df3;
+}
+body main #social-links .link-container:hover {
+  background-color: #4f7df3;
+}
+body main #social-links .link-container:hover i {
+  color: white;
+}
+body footer #copyright {
+  display: block;
+  width: 100%;
+  padding: 1.5em 0;
+  color: #969696;
+  text-align: center;
+  font-family: "Libre Franklin";
+  font-size: 0.7em;
+}
+
+/*# sourceMappingURL=styles.css.map */
