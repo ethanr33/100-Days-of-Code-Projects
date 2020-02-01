@@ -1,0 +1,109 @@
+
+$cyan: hsl(179, 62%, 43%)
+$bright-yellow: hsl(71, 73%, 54%)
+
+$light-gray: hsl(204, 43%, 93%)
+$grayish-blue: hsl(218, 22%, 67%)
+
+$default-font-family: "Karla"
+$default-font-size: 16px
+
+@mixin desktop-breakpoint
+  @media only screen and (min-width: 700px)
+    @content
+
+body
+  #content-container
+    display: block
+    margin: 3em auto 0 auto
+    max-width: 45em
+    @include desktop-breakpoint
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: 9fr 11fr
+      grid-template-areas: "Join Join" "Sign-Up Why-Us"
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.25)
+      -moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.25)
+      box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.25)
+  .text
+    font-family: $default-font-family
+  .content-block
+    width: 80%
+    padding: 0 10%
+  #join-block
+    @include desktop-breakpoint
+      grid-area: Join
+    #join-title
+      padding-top: 0.75em
+      color: $cyan
+      font-size: 1.1em
+      font-weight: 700
+    #join-subtitle
+      padding: 0.5em 0
+      color: $bright-yellow
+      font-size: 0.9em
+      line-height: 1.45em
+    #join-desc
+      color: $grayish-blue
+      font-size: 0.85em
+      line-height: 2em
+  #sign-up-block
+    background-color: $cyan
+    @include desktop-breakpoint
+      grid-area: Sign-Up
+    #sign-up-title
+      padding-top: 1.5em
+      font-weight: 700
+    #sign-up-price
+      margin: 0
+      padding: 0
+      font-size: 2em
+      font-weight: 700
+    #sign-up-price::after
+      content: " per month"
+      display: inline-block
+      vertical-align: middle
+      padding: 0 0 0 0.75em
+      color: $light-gray
+      font-size: 0.9rem
+      font-weight: 400
+    #sign-up-desc
+      font-size: 0.9em
+    #sign-up-button
+      width: 16em
+      height: 3em
+      margin-top: 1em
+      margin-bottom: 1.5em
+      color: white
+      border: none
+      border-radius: 7px
+      background-color: $bright-yellow
+      font-family: $default-font-family
+      font-weight: 700
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.25)
+      -moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.25)
+      box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.25)
+  #sign-up-block .text
+    color: white
+  #why-block
+    background-color: #48BFBD
+    @include desktop-breakpoint
+      grid-area: Why-Us
+    #why-title
+      margin: 0
+      padding: 1.5em 0 1em 0
+      color: white
+      font-size: 1.1em
+      font-weight: 700
+    #why-desc-container
+      display: flex
+      flex-direction: column
+      padding-bottom: 1.5em
+      .why-desc
+        margin: 0.25em 0
+        padding: 0
+        color: $light-gray
+        font-size: 0.8em
+   
+     
+    

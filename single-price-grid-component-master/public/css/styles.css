@@ -1,0 +1,120 @@
+body #content-container {
+  display: block;
+  margin: 3em auto 0 auto;
+  max-width: 45em;
+}
+@media only screen and (min-width: 700px) {
+  body #content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 9fr 11fr;
+    grid-template-areas: "Join Join" "Sign-Up Why-Us";
+    box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.25);
+  }
+}
+body .text {
+  font-family: "Karla";
+}
+body .content-block {
+  width: 80%;
+  padding: 0 10%;
+}
+@media only screen and (min-width: 700px) {
+  body #join-block {
+    grid-area: Join;
+  }
+}
+body #join-block #join-title {
+  padding-top: 0.75em;
+  color: #2ab2af;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+body #join-block #join-subtitle {
+  padding: 0.5em 0;
+  color: #c0df34;
+  font-size: 0.9em;
+  line-height: 1.45em;
+}
+body #join-block #join-desc {
+  color: #98a6bd;
+  font-size: 0.85em;
+  line-height: 2em;
+}
+body #sign-up-block {
+  background-color: #2ab2af;
+}
+@media only screen and (min-width: 700px) {
+  body #sign-up-block {
+    grid-area: Sign-Up;
+  }
+}
+body #sign-up-block #sign-up-title {
+  padding-top: 1.5em;
+  font-weight: 700;
+}
+body #sign-up-block #sign-up-price {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  font-weight: 700;
+}
+body #sign-up-block #sign-up-price::after {
+  content: " per month";
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0 0 0.75em;
+  color: #e5eff5;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+body #sign-up-block #sign-up-desc {
+  font-size: 0.9em;
+}
+body #sign-up-block #sign-up-button {
+  width: 16em;
+  height: 3em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  background-color: #c0df34;
+  font-family: "Karla";
+  font-weight: 700;
+  box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.25);
+}
+body #sign-up-block .text {
+  color: white;
+}
+body #why-block {
+  background-color: #48BFBD;
+}
+@media only screen and (min-width: 700px) {
+  body #why-block {
+    grid-area: Why-Us;
+  }
+}
+body #why-block #why-title {
+  margin: 0;
+  padding: 1.5em 0 1em 0;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+body #why-block #why-desc-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  padding-bottom: 1.5em;
+}
+body #why-block #why-desc-container .why-desc {
+  margin: 0.25em 0;
+  padding: 0;
+  color: #e5eff5;
+  font-size: 0.8em;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3B1YmxpYy9zYXNzL3N0eWxlcy5zYXNzIiwiLi4vcHVibGljL2Nzcy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWVFO0VBQ0UsY0FBQTtFQUNBLHVCQUFBO0VBQ0EsZUFBQTtBQ2RKO0FET0U7RUFJQTtJQUtJLGFBQUE7SUFDQSw4QkFBQTtJQUNBLDRCQUFBO0lBQ0EsaURBQUE7SUFHQSxrREFBQTtFQ1pKO0FBQ0Y7QURZRTtFQUNFLG9CQXJCa0I7QUNXdEI7QURXRTtFQUNFLFVBQUE7RUFDQSxjQUFBO0FDVEo7QURYRTtFQXFCQTtJQUVJLGVBQUE7RUNSSjtBQUNGO0FEUUk7RUFDRSxtQkFBQTtFQUNBLGNBcENDO0VBcUNELGdCQUFBO0VBQ0EsZ0JBQUE7QUNOTjtBRE9JO0VBQ0UsZ0JBQUE7RUFDQSxjQXhDVTtFQXlDVixnQkFBQTtFQUNBLG1CQUFBO0FDTE47QURNSTtFQUNFLGNBekNTO0VBMENULGlCQUFBO0VBQ0EsZ0JBQUE7QUNKTjtBREtFO0VBQ0UseUJBakRHO0FDOENQO0FEcENFO0VBc0NBO0lBR0ksa0JBQUE7RUNESjtBQUNGO0FEQ0k7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0FDQ047QURBSTtFQUNFLFNBQUE7RUFDQSxVQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0FDRU47QURESTtFQUNFLHFCQUFBO0VBQ0EscUJBQUE7RUFDQSxzQkFBQTtFQUNBLHFCQUFBO0VBQ0EsY0E5RE87RUErRFAsaUJBQUE7RUFDQSxnQkFBQTtBQ0dOO0FERkk7RUFDRSxnQkFBQTtBQ0lOO0FESEk7RUFDRSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkE3RVU7RUE4RVYsb0JBekVnQjtFQTBFaEIsZ0JBQUE7RUFHQSxrREFBQTtBQ0tOO0FESkU7RUFDRSxZQUFBO0FDTUo7QURMRTtFQUNFLHlCQUFBO0FDT0o7QURwRkU7RUE0RUE7SUFHSSxpQkFBQTtFQ1NKO0FBQ0Y7QURUSTtFQUNFLFNBQUE7RUFDQSxzQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDV047QURWSTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSxzQkFBQTtFQUNBLHFCQUFBO0FDWU47QURYTTtFQUNFLGdCQUFBO0VBQ0EsVUFBQTtFQUNBLGNBcEdLO0VBcUdMLGdCQUFBO0FDYVIiLCJmaWxlIjoic3R5bGVzLmNzcyJ9 */
