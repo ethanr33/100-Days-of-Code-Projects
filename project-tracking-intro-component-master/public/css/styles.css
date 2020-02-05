@@ -1,0 +1,339 @@
+html {
+  width: 100vw;
+  position: fixed;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+body header {
+  width: 80vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 10vw;
+  background-color: transparent;
+  z-index: 1000000;
+}
+body header #header-logo {
+  width: 24px;
+}
+@media only screen and (min-width: 1000px) {
+  body header #header-logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body header #nav-toggle-button {
+    display: none;
+  }
+}
+body header nav {
+  width: 17em;
+  display: block;
+  position: absolute;
+  top: -100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav {
+    width: 25em;
+    position: static;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+body header nav #nav-line {
+  width: 80%;
+  margin: 0 10%;
+  border-bottom: 1.5px solid #eef3f6;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav #nav-line {
+    width: 7px;
+    height: 7px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #a0a1ac;
+  }
+}
+body header nav .nav-link {
+  font-family: "Barlow Condensed";
+  font-weight: 700;
+  font-size: 1.15em;
+  text-align: center;
+  text-transform: uppercase;
+}
+body header nav .nav-link:hover {
+  text-decoration: underline;
+}
+body header nav #login-nav-link {
+  color: #a0a1ac;
+}
+body header nav.in {
+  animation-name: nav-slide-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+body header nav.out {
+  animation-name: nav-slide-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+body main {
+  width: 100%;
+  margin-top: 5em;
+  position: absolute;
+}
+body main #img-container {
+  width: 85%;
+  height: 26em;
+  position: absolute;
+  top: -10em;
+  left: 50%;
+  border-radius: 2em;
+  background-color: #eef3f6;
+  object-fit: contain;
+}
+@media only screen and (min-width: 375px) {
+  body main #img-container {
+    height: 30em;
+  }
+}
+@media only screen and (min-width: 500px) {
+  body main #img-container {
+    height: 32em;
+  }
+}
+@media only screen and (min-width: 600px) {
+  body main #img-container {
+    height: 36em;
+  }
+}
+@media only screen and (min-width: 725px) {
+  body main #img-container {
+    height: 39em;
+  }
+}
+@media only screen and (min-width: 850px) {
+  body main #img-container {
+    height: 42em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #img-container {
+    width: 44em;
+    height: 29em;
+    left: 61%;
+  }
+}
+body main #main-img {
+  width: 25em;
+  position: relative;
+  top: 1em;
+  left: 1em;
+}
+@media only screen and (min-width: 375px) {
+  body main #main-img {
+    width: 32em;
+  }
+}
+@media only screen and (min-width: 500px) {
+  body main #main-img {
+    width: 38em;
+  }
+}
+@media only screen and (min-width: 600px) {
+  body main #main-img {
+    width: 46em;
+  }
+}
+@media only screen and (min-width: 725px) {
+  body main #main-img {
+    width: 52em;
+  }
+}
+@media only screen and (min-width: 850px) {
+  body main #main-img {
+    width: 57em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-img {
+    width: 55em;
+    top: 8em;
+    left: 61%;
+  }
+}
+body main #main-text {
+  width: 80%;
+  margin: 5em 10% 0 10%;
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-text {
+    width: 40%;
+    position: absolute;
+    top: 0;
+  }
+}
+body main #main-text-intro {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+body main #main-intro-text-1 {
+  width: 2em;
+  margin: 0 2em 0 0;
+  padding: 0.25em 0.75em;
+  color: white;
+  background-color: #242942;
+  font-family: "Barlow Condensed";
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.75em;
+}
+body main #main-intro-text-2 {
+  font-family: "Barlow Condensed";
+  color: #a0a1ac;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+body main #main-text-title {
+  margin: 0;
+  color: #242942;
+  font-family: "Barlow Condensed";
+  font-weight: 700;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 500px) {
+  body main #main-text-title {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (min-width: 675px) {
+  body main #main-text-title {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-text-title {
+    font-size: 3.25em;
+  }
+}
+body main #main-text-subtitle {
+  width: 18em;
+  margin-top: 0.5em;
+  color: #5b5f71;
+  font-family: "Barlow";
+  font-size: 1em;
+}
+@media only screen and (min-width: 500px) {
+  body main #main-text-subtitle {
+    margin: 1em 0;
+    font-size: 1.15em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-text-subtitle {
+    margin: 2em 0 3em 0;
+    line-height: 1.5em;
+  }
+}
+body main #main-text-cta {
+  width: 15em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 375px) {
+  body main #main-text-cta {
+    width: 19em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-text-cta {
+    width: 22em;
+  }
+}
+body main #main-cta-button {
+  width: 8em;
+  height: 3em;
+  display: inline;
+  padding: 0.65em 0;
+  color: white;
+  background-color: #ff5c5c;
+  border: none;
+  border-radius: 0.35em;
+  font-family: "Barlow Condensed";
+  font-size: 1em;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 375px) {
+  body main #main-cta-button {
+    width: 7.5em;
+    font-size: 1.15em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-cta-button {
+    width: 9.5em;
+    letter-spacing: 0.1em;
+  }
+}
+body main #main-cta-button:hover {
+  background-color: #FF8584;
+}
+body main #main-cta-text {
+  display: inline;
+  color: #a0a1ac;
+  font-family: "Barlow Condensed";
+  font-size: 1em;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 375px) {
+  body main #main-cta-text {
+    font-size: 1.15em;
+    letter-spacing: 0.1em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main #main-cta-text {
+    letter-spacing: 0.15em;
+  }
+}
+
+@keyframes nav-slide-in {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 6em;
+  }
+}
+@keyframes nav-slide-out {
+  0% {
+    top: 6em;
+  }
+  100% {
+    top: -100vh;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

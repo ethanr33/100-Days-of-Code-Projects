@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Project tracking intro component</title>
+  <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700&display=swap" rel="stylesheet">
+  <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+</head>
+<body>
+  <header>
+    <img id="header-logo" src="images/logo.svg" alt="Logo">
+    <img id="nav-toggle-button" src="images/icon-hamburger.svg" alt="Nav toggle">
+    <nav>
+      <p class="nav-link">Product</p>
+      <p class="nav-link">Features</p>
+      <p class="nav-link">Pricing</p>
+      <div id="nav-line"></div>
+      <p class="nav-link" id="login-nav-link">Login</p>
+    </nav>
+  </header>
+  <main>
+    <div id="img-container"></div>
+    <img id="main-img" src="images/illustration-devices.svg" alt="Clip art picture of some electronic devices">
+    <div id="main-text">
+      <div id="main-text-intro">
+        <p id="main-intro-text-1">New</p>
+        <p id="main-intro-text-2">Monograph Dashboard</p>
+      </div>
+      <div id="main-text-titles">
+        <p id="main-text-title">Powerful insights into your team</p>
+        <p id="main-text-subtitle">Project planning and time tracking for agile teams</p>
+      </div>
+      <div id="main-text-cta">
+        <button id="main-cta-button">Schedule a demo</button>
+        <p id="main-cta-text"> To see a preview</p>
+      </div>
+    </div>
+  </main>
+  <script>
+    window.onload = () => {
+      
+      let navToggleButton = document.getElementById("nav-toggle-button");
+      let navContainer = document.getElementsByTagName("nav")[0];
+      
+      let isNavDown = false;
+      
+      navToggleButton.addEventListener("click", () => {
+        if (navContainer.classList.length == 0) {
+          navContainer.classList.toggle("in");
+        } else {
+          navContainer.classList.toggle("in");
+          navContainer.classList.toggle("out");
+        }
+        if (!isNavDown) {
+          navToggleButton.src = "images/icon-close.svg";
+        } else {
+          navToggleButton.src = "images/icon-hamburger.svg";
+        }
+        isNavDown = !isNavDown;
+      })
+      
+    }
+  </script>
+</body>
+</html>

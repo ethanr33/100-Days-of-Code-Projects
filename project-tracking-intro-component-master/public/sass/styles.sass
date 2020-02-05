@@ -1,0 +1,245 @@
+
+$red: hsl(0, 100%, 68%)
+
+$very-dark-blue: hsl(230, 29%, 20%)
+$dark-grayish-blue: hsl(230, 11%, 40%)
+$grayish-blue: hsl(231, 7%, 65%)
+$light-grayish-blue: hsl(207, 33%, 95%)
+
+$primary-font: "Barlow"
+$secondary-font: "Barlow Condensed"
+
+@mixin header-breakpoint
+  @media only screen and (min-width: 1000px)
+    @content
+      
+@mixin main-breakpoint
+  @media only screen and (min-width: 1000px)
+    @content
+
+html
+  width: 100vw
+  position: fixed
+  overflow-x: hidden
+body
+  width: 100vw
+  overflow-x: hidden
+  header
+    width: 80vw
+    position: fixed
+    top: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1.5em 10vw
+    background-color: transparent
+    z-index: 1000000
+    #header-logo
+      width: 24px
+      @include header-breakpoint
+        width: 36px
+        height: 36px
+    #nav-toggle-button
+      @include header-breakpoint
+        display: none
+    nav
+      width: 17em
+      display: block
+      position: absolute
+      top: -100vh
+      left: 50%
+      transform: translateX(-50%)
+      box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.20)
+      background-color: white
+      @include header-breakpoint
+        width: 25em
+        position: static
+        display: flex
+        justify-content: space-around
+        align-items: center
+        transform: none
+        background-color: transparent
+        box-shadow: none
+      #nav-line
+        width: 80%
+        margin: 0 10%
+        border-bottom: 1.5px solid $light-grayish-blue
+        @include header-breakpoint
+          width: 7px
+          height: 7px
+          margin: 0
+          border: none
+          border-radius: 5px
+          background-color: $grayish-blue
+      .nav-link
+        font-family: $secondary-font
+        font-weight: 700
+        font-size: 1.15em
+        text-align: center
+        text-transform: uppercase
+      .nav-link:hover
+        text-decoration: underline
+      #login-nav-link
+        color: $grayish-blue
+    nav.in
+      animation-name: nav-slide-in
+      animation-duration: 1s
+      animation-fill-mode: forwards
+    nav.out 
+      animation-name: nav-slide-out
+      animation-duration: 1s
+      animation-fill-mode: forwards   
+  main
+    width: 100%
+    margin-top: 5em
+    position: absolute
+    #img-container
+      width: 85%
+      height: 26em
+      position: absolute
+      top: -10em
+      left: 50%
+      border-radius: 2em
+      background-color: $light-grayish-blue
+      object-fit: contain
+      @media only screen and (min-width: 375px)
+        height: 30em
+      @media only screen and (min-width: 500px)
+        height: 32em
+      @media only screen and (min-width: 600px)
+        height: 36em
+      @media only screen and (min-width: 725px)
+        height: 39em
+      @media only screen and (min-width: 850px)
+        height: 42em
+      @include main-breakpoint
+        width: 44em
+        height: 29em
+        left: 61%
+    #main-img
+      width: 25em
+      position: relative
+      top: 1em
+      left: 1em
+      @media only screen and (min-width: 375px)
+        width: 32em
+      @media only screen and (min-width: 500px)
+        width: 38em
+      @media only screen and (min-width: 600px)
+        width: 46em
+      @media only screen and (min-width: 725px)
+        width: 52em
+      @media only screen and (min-width: 850px)
+        width: 57em
+      @include main-breakpoint
+        width: 55em
+        top: 8em
+        left: 61%
+    #main-text
+      width: 80%
+      margin: 5em 10% 0 10%
+      @include main-breakpoint
+        width: 40%
+        position: absolute
+        top: 0
+    #main-text-intro
+      width: 100%
+      display: flex
+      align-items: center
+    #main-intro-text-1
+      width: 2em
+      margin: 0 2em 0 0
+      padding: 0.25em 0.75em
+      color: white
+      background-color: $very-dark-blue
+      font-family: $secondary-font
+      font-weight: bold
+      text-transform: uppercase
+      text-align: center
+      border-radius: 0.75em
+    #main-intro-text-2
+      font-family: $secondary-font
+      color: $grayish-blue
+      font-weight: 400
+      letter-spacing: 0.15em
+      text-transform: uppercase
+      font-size: 0.9em
+    #main-text-title
+      margin: 0
+      color: $very-dark-blue
+      font-family: $secondary-font
+      font-weight: 700
+      font-size: 2em
+      text-transform: uppercase
+      @media only screen and (min-width: 500px)
+        font-size: 2.5em
+      @media only screen and (min-width: 675px)
+        font-size: 3em
+      @include main-breakpoint
+        font-size: 3.25em
+    #main-text-subtitle
+      width: 18em
+      margin-top: 0.5em
+      color: $dark-grayish-blue
+      font-family: $primary-font
+      font-size: 1em
+      @media only screen and (min-width: 500px)
+        margin: 1em 0
+        font-size: 1.15em
+      @include main-breakpoint
+        margin: 2em 0 3em 0
+        line-height: 1.5em
+    #main-text-cta
+      width: 15em
+      display: flex
+      justify-content: space-between
+      align-items: center
+      @media only screen and (min-width: 375px)
+        width: 19em
+      @include main-breakpoint
+        width: 22em
+    #main-cta-button
+      width: 8em
+      height: 3em
+      display: inline
+      padding: 0.65em 0
+      color: white
+      background-color: $red
+      border: none
+      border-radius: 0.35em
+      font-family: $secondary-font
+      font-size: 1em
+      text-transform: uppercase
+      @media only screen and (min-width: 375px)
+        width: 7.5em
+        font-size: 1.15em
+      @include main-breakpoint
+        width: 9.5em
+        letter-spacing: 0.1em
+    #main-cta-button:hover
+      background-color: #FF8584	
+    #main-cta-text
+      display: inline
+      color: $grayish-blue
+      font-family: $secondary-font
+      font-size: 1em
+      text-transform: uppercase
+      @media only screen and (min-width: 375px)
+        font-size: 1.15em
+        letter-spacing: 0.1em
+      @include main-breakpoint
+        letter-spacing: 0.15em
+
+    
+@keyframes nav-slide-in
+  0% 
+    top: -100vh
+  100%
+    top: 6em
+    
+@keyframes nav-slide-out
+  0% 
+    top: 6em
+  100%
+    top: -100vh
+        
