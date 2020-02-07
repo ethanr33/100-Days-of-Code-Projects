@@ -1,0 +1,222 @@
+body {
+  background-color: #674baf;
+  background-image: url("../../images/bg-mobile.svg");
+  background-size: cover;
+}
+@media only screen and (min-width: 1000px) {
+  body {
+    background-image: url("../../images/bg-desktop.svg");
+  }
+}
+body header {
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding: 1.5em 10%;
+}
+@media only screen and (min-width: 1000px) {
+  body header {
+    width: 90%;
+    padding: 2.5em 5%;
+  }
+}
+body header .header-logo {
+  width: auto;
+  height: 2em;
+}
+@media only screen and (min-width: 1000px) {
+  body header .header-logo {
+    width: auto;
+    height: 3em;
+  }
+}
+body main {
+  width: 85%;
+  margin: 7em auto 0 auto;
+}
+@media only screen and (min-width: 1000px) {
+  body main {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body main {
+    margin: 8em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 600px) {
+  body main .img-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .img-container {
+    width: 110%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body main .img-container {
+    width: 76.5%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body main .img-container {
+    width: 85%;
+  }
+}
+body main .img-container .main-img {
+  width: 100%;
+}
+body main .desc-container {
+  margin: 2em 0 0 0;
+}
+@media only screen and (min-width: 1000px) {
+  body main .desc-container {
+    width: 80%;
+    margin: 0 0 0 5%;
+  }
+}
+body main .desc-container .desc-title {
+  color: white;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  text-align: center;
+}
+@media only screen and (min-width: 600px) {
+  body main .desc-container .desc-title {
+    width: 60%;
+    margin: 0 auto 0 auto;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body main .desc-container .desc-title {
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .desc-container .desc-title {
+    width: 100%;
+    font-size: 2em;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body main .desc-container .desc-title {
+    width: 85%;
+    font-size: 2.25em;
+  }
+}
+body main .desc-container .desc-text {
+  color: white;
+  font-family: "Open Sans";
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+@media only screen and (min-width: 600px) {
+  body main .desc-container .desc-text {
+    width: 80%;
+    margin: 1em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body main .desc-container .desc-text {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .desc-container .desc-text {
+    width: 100%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body main .desc-container .desc-text {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body main .desc-container .desc-text {
+    font-size: 1em;
+  }
+}
+body main .desc-container .cta-button {
+  width: 70%;
+  display: block;
+  margin: 2em auto 0 auto;
+  padding: 1em 0;
+  border: none;
+  outline: none;
+  border-radius: 1.5em;
+  background-color: white;
+  color: #674baf;
+  font-family: "Open Sans";
+  font-size: 0.8em;
+  -webkit-box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (min-width: 600px) {
+  body main .desc-container .cta-button {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .desc-container .cta-button {
+    width: 10em;
+    margin: 2em auto 0 0;
+    padding: 1em 0;
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body main .desc-container .cta-button {
+    width: 13em;
+    margin: 2em auto 0 7.5%;
+  }
+}
+body footer {
+  margin: 4em 0 2em 0;
+}
+@media only screen and (min-width: 1000px) {
+  body footer {
+    width: 90%;
+    margin: 3em auto 0 auto;
+  }
+}
+body footer .social-links {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 600px) {
+  body footer .social-links {
+    width: 9em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body footer .social-links {
+    margin: 0 0 0 auto;
+  }
+}
+body footer .social-links .social-link .icon {
+  width: 1em;
+  height: 1em;
+  padding: 0.5em;
+  border: 1.25px solid white;
+  border-radius: 1em;
+  color: white;
+}
+
+/*# sourceMappingURL=styles.css.map */
