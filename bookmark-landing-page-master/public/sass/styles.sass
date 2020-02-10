@@ -1,0 +1,730 @@
+
+$soft-blue: hsl(231, 69%, 60%)
+$soft-red: hsl(0, 94%, 66%)
+
+$grayish-blue: hsl(229, 8%, 60%)
+$very-dark-blue: hsl(229, 31%, 21%)
+$transparent-very-dark-blue: hsla(229, 31%, 21%, 0.9)
+
+$button-white: #f5f5f8
+
+$main-font: "Rubik"
+
+@mixin box-shadow
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.17)
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.17)
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.17)
+  
+@mixin desktop-breakpoint
+  @media only screen and (min-width: 1000px)
+    @content
+    
+html
+  max-width: 100vw
+  overflow-x: hidden
+body
+  max-width: 100vw
+  overflow-x: hidden
+  .content-button
+    padding: 1em 0.9em
+    font-family: $main-font
+    font-size: 0.9em
+    font-weight: 500
+    border: none
+    border-radius: 5px
+    outline: none
+    @include box-shadow
+  .content-button.blue
+    background-color: $soft-blue
+    color: white
+  .content-button.blue:hover
+    border: 1.5px solid $soft-blue
+    background-color: white
+    color: $soft-blue
+  .content-button.white
+    background-color: #f5f5f8
+    color: $very-dark-blue
+  .content-button.white:hover
+    border: 1.5px solid $very-dark-blue
+    background-color: white
+    color: $very-dark-blue
+  .content-button.red
+    background-color: $soft-red
+    color: white
+  .content-button.red:hover
+    border: 1.5px solid $soft-red
+    background-color: white
+    color: $soft-red
+  header
+    width: 85vw
+    position: fixed
+    top: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1.5em 7.5vw
+    z-index: 100000
+    background-color: white
+    @include desktop-breakpoint
+      height: 3em
+      display: flex
+      justify-content: space-between
+    .header-logo
+      position: relative
+      z-index: 10
+    .header-logo.light path
+      fill: white
+    .header-logo.dark path
+      fill: auto
+    .header-logo.light g g circle
+      fill: white
+    .header-logo.dark g g circle
+      fill: auto
+    .header-logo.light g g path
+      fill: $very-dark-blue
+    .header-logo.dark g g path
+      fill: auto
+    .nav-toggle-button
+      position: relative
+      z-index: 10
+      @include desktop-breakpoint
+        display: none
+    .nav-toggle-button.light path
+      fill: white
+    nav
+      width: 100vw
+      height: 100vh
+      position: absolute
+      top: -225vh
+      left: 0
+      z-index: 5
+      background-color: $transparent-very-dark-blue
+      @include desktop-breakpoint
+        width: 50%
+        height: auto
+        position: static
+        background-color: transparent
+      @media only screen and (min-width: 1200px)
+        width: 40%
+      .nav-links
+        margin-top: 5em
+        @include desktop-breakpoint
+          display: flex
+          justify-content: space-between
+          align-items: center
+          margin-top: 0
+        .nav-link
+          width: 85%
+          margin: 0 7%
+          padding: 1em 0
+          color: white
+          font-family: $main-font
+          text-align: center
+          text-transform: uppercase
+          font-size: 1.2em
+          letter-spacing: 0.15em
+          text-decoration: none
+          border-bottom: 1px solid $grayish-blue
+          @include desktop-breakpoint
+            margin: 0
+            padding: 0
+            color: $very-dark-blue
+            border: none
+            letter-spacing: 0.075em
+            font-size: 1em
+          @media only screen and (min-width: 1200px)
+            font-size: 0.9em
+        .nav-link:hover
+          color: $soft-red
+        .highlighted-nav-link
+          width: 85%
+          margin: 1.5em 7% 0 7%
+          padding: 0.5em 0
+          color: white
+          font-family: $main-font
+          text-align: center
+          text-transform: uppercase
+          font-size: 1.2em
+          letter-spacing: 0.2em
+          border: 2px solid white
+          border-radius: 8px
+          @include desktop-breakpoint
+            margin: 0 0 0 1em
+            padding: 0.75em 0
+            background-color: $soft-red
+            letter-spacing: 0.075em
+            font-size: 0.9em
+        .highlighted-nav-link:hover
+          border: 1.5px solid $soft-red
+          background-color: white
+          color: $soft-red
+        .nav-link.first-link
+          border-top: 1px solid $grayish-blue
+          @include desktop-breakpoint
+            border: none
+      .header-social-links
+        width: 5em
+        position: absolute
+        bottom: 3em
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        justify-content: space-between
+        margin: 0 auto
+        @include desktop-breakpoint
+          display: none
+    nav.in
+      animation-name: nav-in
+      animation-duration: 1s
+      animation-fill-mode: forwards
+    nav.out
+      animation-name: nav-out
+      animation-duration: 1s
+      animation-fill-mode: forwards
+  main
+    width: 90%
+    margin: 8em auto 0 auto
+    .hero-container
+      width: 100%
+      @include desktop-breakpoint
+        display: flex
+        flex-direction: row-reverse
+        align-items: center
+      .hero-img-container
+        width: 100%
+        position: relative
+        .hero-img-bg
+          width: 90%
+          height: 70%
+          position: absolute
+          top: 27.5%
+          left: 30%
+          background-color: $soft-blue
+          border-radius: 50% 0 0 30%
+          z-index: -1
+          @media only screen and (min-width: 700px)
+            width: 70%
+            left: 40%
+          @include desktop-breakpoint
+            width: 50em
+            height: 80%
+            top: 20%
+            left: 10%
+        .hero-img
+          width: 100%
+          @media only screen and (min-width: 700px)
+            width: 75%
+            margin-left: 13.5%
+          @include desktop-breakpoint
+            width: 100%
+            margin-left: 0
+      .hero-text-container
+        margin: 5em 0 0 0
+        @include desktop-breakpoint
+          margin: 0
+        @media only screen and (min-width: 1200px)
+          width: 110%
+          margin-left: 5%
+        .hero-title
+          margin: 0 0 0.5em 0
+          font-family: $main-font
+          text-align: center
+          font-weight: 500
+          font-size: 1.75em
+          line-height: 1.35em
+          @include desktop-breakpoint
+            text-align: left
+            font-size: 2.5em
+          @media only screen and (min-width: 1200px)
+            width: 70%
+            font-size: 3em
+        .hero-desc
+          width: 85%
+          margin: 0 7.5% 0 7.5%
+          font-family: $main-font
+          text-align: center
+          font-size: 0.9em
+          line-height: 1.55em
+          color: $grayish-blue
+          @media only screen and (min-width: 750px)
+            width: 65%
+            margin: 0 auto
+          @include desktop-breakpoint
+            width: 100%
+            text-align: left
+          @media only screen and (min-width: 1200px)
+            width: 70%
+            margin-right: 30%
+            font-size: 1.2em
+        .hero-buttons-container
+          width: 90%
+          margin: 2em auto 0 auto
+          display: flex
+          justify-content: space-around
+          @media only screen and (min-width: 600px)
+            width: 65%
+          @include desktop-breakpoint
+              width: 100%
+              justify-content: flex-start
+          .hero-button
+            @include desktop-breakpoint
+              margin-right: 1.5em
+    .features-container
+      width: 100%
+      margin: 6em 0 0 0
+      .features-desc-container
+        width: 100%
+        .features-desc-title
+          margin: 0 0 0.5em 0
+          font-family: $main-font
+          font-weight: 500
+          font-size: 1.35em
+          text-align: center
+          @include desktop-breakpoint
+            font-size: 1.65em
+        .features-desc-text
+          width: 90%
+          margin: 0 auto
+          font-family: $main-font
+          font-size: 0.9em
+          color: $grayish-blue
+          line-height: 1.55em
+          text-align: center
+          @media only screen and (min-width: 750px)
+            width: 75%
+            margin: 0 auto
+          @include desktop-breakpoint
+            width: 55%
+            font-size: 1em
+      .features-applet-container
+        width: 100%
+        margin: 2em 0 0 0
+        .applet-content
+          @include desktop-breakpoint
+            display: flex
+            align-items: center
+        .features-applet-choices
+          width: 90%
+          margin: 0 auto 2em auto
+          @media only screen and (min-width: 600px)
+            width: 23em
+          @include desktop-breakpoint
+            width: 48em
+            display: flex
+            justify-content: space-between
+            margin: 0 auto
+          .features-applet-choice
+            margin: 0
+            padding: 1em 0
+            border-bottom: 1px solid $grayish-blue
+            text-align: center
+            color: $grayish-blue
+            font-family: $main-font
+            @include desktop-breakpoint
+              width: 18em
+              font-size: 0.9em
+          .features-applet-choice:hover
+            color: $soft-red
+          .features-applet-choice.selected
+            color: $very-dark-blue
+          .features-applet-choice.selected::after
+            content: ""
+            width: 50%
+            height: 0.25em
+            position: relative
+            bottom: -1em
+            display: block
+            margin: 0 auto
+            background-color: $soft-red
+            @include desktop-breakpoint
+              width: 100%
+              bottom: -1.1em
+        .features-applet-choices:first-child
+          border-top: 1px solid $grayish-blue
+          @include desktop-breakpoint
+            border: none
+      .applet-img-container
+        width: 100%
+        margin: 3em 0 0 0
+        position: relative
+        @media only screen and (min-width: 700px)
+          width: 70%
+        @include desktop-breakpoint
+          width: 50%
+        .applet-img-bg
+          width: 100%
+          height: 90%
+          position: absolute
+          top: 20%
+          left: -15%
+          background-color: $soft-blue
+          border-radius: 0 50% 50% 0
+          z-index: -1
+          @include desktop-breakpoint
+            width: 80%
+            height: 90%
+            top: 25%            
+        .applet-img
+          width: 100%
+          @media only screen and (min-width: 700px)
+            margin-left: 5%
+          @include desktop-breakpoint
+            width: auto
+            height: 19em
+      .applet-desc-container
+        width: 100%
+        margin: 5em 0 0 0
+        @include desktop-breakpoint
+          width: 40%
+          margin: 2em 0 0 10%
+        .applet-desc-header
+          margin: 0 0 0.5em 0
+          font-family: $main-font
+          font-weight: 500
+          font-size: 1.35em
+          text-align: center
+          @include desktop-breakpoint
+            font-size: 1.65em
+            text-align: left
+        .applet-desc-text
+          width: 90%
+          margin: 0 auto
+          font-family: $main-font
+          font-size: 0.9em
+          color: $grayish-blue
+          line-height: 1.55em
+          text-align: center
+          @media only screen and (min-width: 750px)
+            width: 75%
+            margin: 1em auto 0 auto
+          @include desktop-breakpoint
+            width: 100%
+            text-align: left
+            font-size: 1em
+        .applet-desc-button
+          display: none
+          @include desktop-breakpoint
+            width: 9em
+            display: block
+            margin: 2em 0 0 0
+    .download-container
+      width: 100%
+      margin: 7em 0 0 0
+      @media only screen and (min-width: 1250px)
+        width: 90%
+        margin: 7em auto 0 auto
+      .download-text-container
+        width: 100%
+        .download-header-text
+          margin: 0 0 0em 0
+          font-family: $main-font
+          font-weight: 500
+          font-size: 1.35em
+          text-align: center
+          @include desktop-breakpoint
+            font-size: 1.65em
+        .download-desc-text
+          width: 85%
+          margin: 1em auto 0 auto
+          font-family: $main-font
+          font-size: 0.9rem
+          font-weight: 400
+          color: $grayish-blue
+          line-height: 1.55em
+          text-align: center
+          @media only screen and (min-width: 750px)
+            width: 65%
+            margin: 1em auto 0 auto
+          @include desktop-breakpoint
+            width: 50%
+            font-size: 1em
+      .download-cards-container
+        @include desktop-breakpoint
+          height: 30em
+          display: flex
+          align-items: center
+          margin: 2em 0 0 0            
+        .download-card
+          width: 80%
+          margin: 3em 10%
+          border-radius: 8px
+          -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.23)
+          -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.23)
+          box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.23)
+          @media only screen and (min-width: 700px)
+            width: 50%
+            margin: 3em auto
+          @include desktop-breakpoint
+            width: 27.5%
+          @media only screen and (min-width: 1250px)
+            width: 25%
+          .download-card-img
+            width: 35%
+            height: auto
+            display: block   
+            margin: 0 auto 0 auto
+            padding: 1.5em 0 0 0
+          .download-card-browser
+            margin: 1em 0 0 0
+            font-family: $main-font
+            font-weight: 500
+            font-size: 1.25rem
+            text-align: center
+          .download-card-version
+            margin: 0.5em 0 0 0
+            font-family: $main-font
+            font-size: 0.9rem
+            font-weight: 400
+            color: $grayish-blue
+            line-height: 1.55em
+            text-align: center
+          .download-card-button-container
+            width: 100%
+            margin: 0.75em 0 0 0
+            padding: 0.75em 0
+            border-top: 5px dotted $button-white
+            .download-card-button
+              width: 70%
+              margin: 0.75em 15% 0.75em 15%
+              padding: 1em 0.75em
+              font-size: 0.9rem
+              font-weight: 400
+    #first-card
+      align-self: flex-start
+    #second-card
+      align-self: center
+    #third-card
+      align-self: flex-end
+    .faq-container
+      @include desktop-breakpoint
+        width: 40em
+        margin: 0 auto
+      .faq-text-container
+        .faq-header-text
+          width: 85%
+          margin: 0 auto 0 auto
+          font-family: $main-font
+          font-weight: 500
+          font-size: 1.35em
+          text-align: center
+          @include desktop-breakpoint
+            font-size: 1.65em
+        .faq-desc-text
+          width: 85%
+          margin: 1em auto 0 auto
+          font-family: $main-font
+          font-size: 0.9rem
+          font-weight: 400
+          color: $grayish-blue
+          line-height: 1.55em
+          text-align: center
+          @media only screen and (min-width: 750px)
+            width: 60%
+            margin: 1em auto 2em auto
+          @include desktop-breakpoint
+            width: 70%
+            font-size: 1em
+      .faq-questions-container
+        width: 95%
+        margin: 0 auto
+        .faq-question
+          display: flex
+          justify-content: space-between
+          align-items: center
+          flex-wrap: wrap
+          padding: 1em 0
+          border-bottom: 1px solid $grayish-blue
+          @media only screen and (min-width: 400px)
+            padding: 0.75em 0
+          .faq-question-title
+            font-family: $main-font
+            font-size: 0.85em
+            @media only screen and (min-width: 400px)
+              font-size: 1em
+          .faq-answer
+            width: 100%
+            margin: 1em auto 0 auto
+            display: none
+            text-align: left
+            font-family: $main-font
+            font-size: 0.9rem
+            font-weight: 400
+            color: $grayish-blue
+            line-height: 1.75em
+        .faq-question:hover
+          .faq-question-title
+            color: $soft-red
+        .faq-question.active
+          .faq-arrow
+            transform: scaleY(-1)
+          .faq-arrow path
+            stroke: $soft-red
+          .faq-answer
+            display: block
+        .faq-more-info
+          display: block
+          margin: 4em auto 0 auto
+          padding: 1em 1.5em 1em 1.5em
+  footer
+    .cta-container
+      width: 90%
+      margin: 3em 0 0 0
+      padding: 3em 5% 0 5%
+      background-color: $soft-blue
+      .cta-text
+        .cta-subtitle
+          margin: 0 0 0.75em 0
+          color: white
+          font-family: $main-font
+          font-size: 0.8em
+          letter-spacing: 0.25em
+          text-align: center
+        .cta-title
+          width: 90%
+          margin: 0 5%
+          color: white
+          font-family: $main-font
+          font-size: 1.35em
+          font-weight: 500
+          text-align: center
+      .cta-form
+        margin: 2em 0 0 0
+        padding-bottom: 3em
+        @include desktop-breakpoint
+          width: 33em
+          display: flex
+          align-items: center
+          margin: 2em auto 0 auto
+        .cta-email-container
+          @media only screen and (min-width: 600px)
+            width: 75%
+            margin: 0 auto 0 auto
+            padding: 0 4% 0 0
+          @media only screen and (min-width: 800px)
+            width: 65%
+            margin: 0 auto 0 auto
+          @include desktop-breakpoint
+            flex-basis: 12em
+            flex-grow: 3
+            margin: 0
+          .cta-email
+            width: 95%
+            padding: 1.2em 0 1.2em 5%
+            border: none
+            border-radius: 6px
+            outline: none
+            font-family: $main-font
+            font-size: 0.9em
+            @media only screen and (min-width: 600px)
+              width: 100%
+          .warning-icon
+            display: none
+          .warning-text
+            display: none
+        .cta-email-container.highlighted
+          height: 4.4em
+          margin-bottom: 0
+          padding-bottom: 0
+          background-color: $soft-red
+          border: 2px solid $soft-red
+          border-radius: 6px
+          @media only screen and (min-width: 600px)
+            width: 75%
+            margin: 0 auto 0 auto
+            padding: 0 4% 0 0
+          @media only screen and (min-width: 800px)
+            width: 65%
+            padding: 0 3.5% 0 0
+          .warning-icon
+            display: block
+            position: relative
+            top: -2.35em
+            left: 90%
+            z-index: 2
+            @media only screen and (min-width: 600px)
+              left: 95%
+          .warning-text
+            display: block
+            position: relative
+            top: -2.75em
+            left: 1em
+            color: white
+            font-family: $main-font
+            font-size: 0.7em
+            font-weight: 500
+            font-size: italic
+            z-index: 2
+        .cta-submit
+          width: 100%
+          margin-top: 0.75em
+          padding-top: 1em
+          padding-bottom: 1em
+          @media only screen and (min-width: 600px)
+            width: 80%
+            display: block
+            margin: 1.5em auto 0 auto
+          @media only screen and (min-width: 800px)
+            width: 68.5%
+          @include desktop-breakpoint
+            flex-basis: 6em
+            flex-grow: 1
+            margin: 0 0 0 1.5em
+            padding: 1.2em
+    .footer-container
+      padding: 2em 0 3em 0
+      background-color: $very-dark-blue
+      @include desktop-breakpoint
+        width: 85%
+        padding: 1.5em 7.5% 1.5em 7.5%
+        display: flex
+        align-items: center
+        justify-content: space-between
+      .footer-links
+        width: 100%
+        height: 11em
+        display: flex
+        flex-direction: column
+        align-items: center
+        @include desktop-breakpoint
+          width: 30em
+          height: auto
+          flex-direction: row
+          justify-content: space-between
+          align-items: center
+        .footer-logo g path
+          fill: white
+        .footer-link
+          color: $button-white
+          text-transform: uppercase
+          font-family: $main-font
+          letter-spacing: 0.2em
+          font-size: 0.9em
+        .footer-link:hover
+          color: $soft-red
+      #first-footer-link
+        margin-top: 2em
+        @include desktop-breakpoint
+          margin: 0
+      .footer-social
+        width: 6em
+        display: flex
+        justify-content: space-around
+        align-items: center
+        margin: 3em auto 0 auto
+        @include desktop-breakpoint
+          width: 10em
+          margin: 0
+      .footer-social-link:hover
+        color: red
+              
+@keyframes nav-in
+  0%
+    top: -225vw
+  100%
+    top: 0
+    
+@keyframes nav-out
+  0%
+    top: 0
+  100%
+    top: -225vw

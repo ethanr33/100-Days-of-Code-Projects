@@ -1,0 +1,1027 @@
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+body .content-button {
+  padding: 1em 0.9em;
+  font-family: "Rubik";
+  font-size: 0.9em;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.17);
+}
+body .content-button.blue {
+  background-color: #5368df;
+  color: white;
+}
+body .content-button.blue:hover {
+  border: 1.5px solid #5368df;
+  background-color: white;
+  color: #5368df;
+}
+body .content-button.white {
+  background-color: #f5f5f8;
+  color: #252b46;
+}
+body .content-button.white:hover {
+  border: 1.5px solid #252b46;
+  background-color: white;
+  color: #252b46;
+}
+body .content-button.red {
+  background-color: #fa5757;
+  color: white;
+}
+body .content-button.red:hover {
+  border: 1.5px solid #fa5757;
+  background-color: white;
+  color: #fa5757;
+}
+body header {
+  width: 85vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 7.5vw;
+  z-index: 100000;
+  background-color: white;
+}
+@media only screen and (min-width: 1000px) {
+  body header {
+    height: 3em;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+body header .header-logo {
+  position: relative;
+  z-index: 10;
+}
+body header .header-logo.light path {
+  fill: white;
+}
+body header .header-logo.dark path {
+  fill: auto;
+}
+body header .header-logo.light g g circle {
+  fill: white;
+}
+body header .header-logo.dark g g circle {
+  fill: auto;
+}
+body header .header-logo.light g g path {
+  fill: #252b46;
+}
+body header .header-logo.dark g g path {
+  fill: auto;
+}
+body header .nav-toggle-button {
+  position: relative;
+  z-index: 10;
+}
+@media only screen and (min-width: 1000px) {
+  body header .nav-toggle-button {
+    display: none;
+  }
+}
+body header .nav-toggle-button.light path {
+  fill: white;
+}
+body header nav {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -225vh;
+  left: 0;
+  z-index: 5;
+  background-color: rgba(37, 43, 70, 0.9);
+}
+@media only screen and (min-width: 1000px) {
+  body header nav {
+    width: 50%;
+    height: auto;
+    position: static;
+    background-color: transparent;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body header nav {
+    width: 40%;
+  }
+}
+body header nav .nav-links {
+  margin-top: 5em;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+  }
+}
+body header nav .nav-links .nav-link {
+  width: 85%;
+  margin: 0 7%;
+  padding: 1em 0;
+  color: white;
+  font-family: "Rubik";
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border-bottom: 1px solid #9194a1;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav .nav-links .nav-link {
+    margin: 0;
+    padding: 0;
+    color: #252b46;
+    border: none;
+    letter-spacing: 0.075em;
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body header nav .nav-links .nav-link {
+    font-size: 0.9em;
+  }
+}
+body header nav .nav-links .nav-link:hover {
+  color: #fa5757;
+}
+body header nav .nav-links .highlighted-nav-link {
+  width: 85%;
+  margin: 1.5em 7% 0 7%;
+  padding: 0.5em 0;
+  color: white;
+  font-family: "Rubik";
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 0.2em;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav .nav-links .highlighted-nav-link {
+    margin: 0 0 0 1em;
+    padding: 0.75em 0;
+    background-color: #fa5757;
+    letter-spacing: 0.075em;
+    font-size: 0.9em;
+  }
+}
+body header nav .nav-links .highlighted-nav-link:hover {
+  border: 1.5px solid #fa5757;
+  background-color: white;
+  color: #fa5757;
+}
+body header nav .nav-links .nav-link.first-link {
+  border-top: 1px solid #9194a1;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav .nav-links .nav-link.first-link {
+    border: none;
+  }
+}
+body header nav .header-social-links {
+  width: 5em;
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1000px) {
+  body header nav .header-social-links {
+    display: none;
+  }
+}
+body header nav.in {
+  animation-name: nav-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+body header nav.out {
+  animation-name: nav-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+body main {
+  width: 90%;
+  margin: 8em auto 0 auto;
+}
+body main .hero-container {
+  width: 100%;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+body main .hero-container .hero-img-container {
+  width: 100%;
+  position: relative;
+}
+body main .hero-container .hero-img-container .hero-img-bg {
+  width: 90%;
+  height: 70%;
+  position: absolute;
+  top: 27.5%;
+  left: 30%;
+  background-color: #5368df;
+  border-radius: 50% 0 0 30%;
+  z-index: -1;
+}
+@media only screen and (min-width: 700px) {
+  body main .hero-container .hero-img-container .hero-img-bg {
+    width: 70%;
+    left: 40%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-img-container .hero-img-bg {
+    width: 50em;
+    height: 80%;
+    top: 20%;
+    left: 10%;
+  }
+}
+body main .hero-container .hero-img-container .hero-img {
+  width: 100%;
+}
+@media only screen and (min-width: 700px) {
+  body main .hero-container .hero-img-container .hero-img {
+    width: 75%;
+    margin-left: 13.5%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-img-container .hero-img {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+body main .hero-container .hero-text-container {
+  margin: 5em 0 0 0;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body main .hero-container .hero-text-container {
+    width: 110%;
+    margin-left: 5%;
+  }
+}
+body main .hero-container .hero-text-container .hero-title {
+  margin: 0 0 0.5em 0;
+  font-family: "Rubik";
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.75em;
+  line-height: 1.35em;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-title {
+    text-align: left;
+    font-size: 2.5em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body main .hero-container .hero-text-container .hero-title {
+    width: 70%;
+    font-size: 3em;
+  }
+}
+body main .hero-container .hero-text-container .hero-desc {
+  width: 85%;
+  margin: 0 7.5% 0 7.5%;
+  font-family: "Rubik";
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.55em;
+  color: #9194a1;
+}
+@media only screen and (min-width: 750px) {
+  body main .hero-container .hero-text-container .hero-desc {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-desc {
+    width: 100%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body main .hero-container .hero-text-container .hero-desc {
+    width: 70%;
+    margin-right: 30%;
+    font-size: 1.2em;
+  }
+}
+body main .hero-container .hero-text-container .hero-buttons-container {
+  width: 90%;
+  margin: 2em auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 600px) {
+  body main .hero-container .hero-text-container .hero-buttons-container {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-buttons-container {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-buttons-container .hero-button {
+    margin-right: 1.5em;
+  }
+}
+body main .features-container {
+  width: 100%;
+  margin: 6em 0 0 0;
+}
+body main .features-container .features-desc-container {
+  width: 100%;
+}
+body main .features-container .features-desc-container .features-desc-title {
+  margin: 0 0 0.5em 0;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 1.35em;
+  text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-desc-container .features-desc-title {
+    font-size: 1.65em;
+  }
+}
+body main .features-container .features-desc-container .features-desc-text {
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Rubik";
+  font-size: 0.9em;
+  color: #9194a1;
+  line-height: 1.55em;
+  text-align: center;
+}
+@media only screen and (min-width: 750px) {
+  body main .features-container .features-desc-container .features-desc-text {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-desc-container .features-desc-text {
+    width: 55%;
+    font-size: 1em;
+  }
+}
+body main .features-container .features-applet-container {
+  width: 100%;
+  margin: 2em 0 0 0;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-applet-container .applet-content {
+    display: flex;
+    align-items: center;
+  }
+}
+body main .features-container .features-applet-container .features-applet-choices {
+  width: 90%;
+  margin: 0 auto 2em auto;
+}
+@media only screen and (min-width: 600px) {
+  body main .features-container .features-applet-container .features-applet-choices {
+    width: 23em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-applet-container .features-applet-choices {
+    width: 48em;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}
+body main .features-container .features-applet-container .features-applet-choices .features-applet-choice {
+  margin: 0;
+  padding: 1em 0;
+  border-bottom: 1px solid #9194a1;
+  text-align: center;
+  color: #9194a1;
+  font-family: "Rubik";
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-applet-container .features-applet-choices .features-applet-choice {
+    width: 18em;
+    font-size: 0.9em;
+  }
+}
+body main .features-container .features-applet-container .features-applet-choices .features-applet-choice:hover {
+  color: #fa5757;
+}
+body main .features-container .features-applet-container .features-applet-choices .features-applet-choice.selected {
+  color: #252b46;
+}
+body main .features-container .features-applet-container .features-applet-choices .features-applet-choice.selected::after {
+  content: "";
+  width: 50%;
+  height: 0.25em;
+  position: relative;
+  bottom: -1em;
+  display: block;
+  margin: 0 auto;
+  background-color: #fa5757;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-applet-container .features-applet-choices .features-applet-choice.selected::after {
+    width: 100%;
+    bottom: -1.1em;
+  }
+}
+body main .features-container .features-applet-container .features-applet-choices:first-child {
+  border-top: 1px solid #9194a1;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .features-applet-container .features-applet-choices:first-child {
+    border: none;
+  }
+}
+body main .features-container .applet-img-container {
+  width: 100%;
+  margin: 3em 0 0 0;
+  position: relative;
+}
+@media only screen and (min-width: 700px) {
+  body main .features-container .applet-img-container {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-img-container {
+    width: 50%;
+  }
+}
+body main .features-container .applet-img-container .applet-img-bg {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 20%;
+  left: -15%;
+  background-color: #5368df;
+  border-radius: 0 50% 50% 0;
+  z-index: -1;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-img-container .applet-img-bg {
+    width: 80%;
+    height: 90%;
+    top: 25%;
+  }
+}
+body main .features-container .applet-img-container .applet-img {
+  width: 100%;
+}
+@media only screen and (min-width: 700px) {
+  body main .features-container .applet-img-container .applet-img {
+    margin-left: 5%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-img-container .applet-img {
+    width: auto;
+    height: 19em;
+  }
+}
+body main .features-container .applet-desc-container {
+  width: 100%;
+  margin: 5em 0 0 0;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-desc-container {
+    width: 40%;
+    margin: 2em 0 0 10%;
+  }
+}
+body main .features-container .applet-desc-container .applet-desc-header {
+  margin: 0 0 0.5em 0;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 1.35em;
+  text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-desc-container .applet-desc-header {
+    font-size: 1.65em;
+    text-align: left;
+  }
+}
+body main .features-container .applet-desc-container .applet-desc-text {
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Rubik";
+  font-size: 0.9em;
+  color: #9194a1;
+  line-height: 1.55em;
+  text-align: center;
+}
+@media only screen and (min-width: 750px) {
+  body main .features-container .applet-desc-container .applet-desc-text {
+    width: 75%;
+    margin: 1em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-desc-container .applet-desc-text {
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+  }
+}
+body main .features-container .applet-desc-container .applet-desc-button {
+  display: none;
+}
+@media only screen and (min-width: 1000px) {
+  body main .features-container .applet-desc-container .applet-desc-button {
+    width: 9em;
+    display: block;
+    margin: 2em 0 0 0;
+  }
+}
+body main .download-container {
+  width: 100%;
+  margin: 7em 0 0 0;
+}
+@media only screen and (min-width: 1250px) {
+  body main .download-container {
+    width: 90%;
+    margin: 7em auto 0 auto;
+  }
+}
+body main .download-container .download-text-container {
+  width: 100%;
+}
+body main .download-container .download-text-container .download-header-text {
+  margin: 0 0 0em 0;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 1.35em;
+  text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+  body main .download-container .download-text-container .download-header-text {
+    font-size: 1.65em;
+  }
+}
+body main .download-container .download-text-container .download-desc-text {
+  width: 85%;
+  margin: 1em auto 0 auto;
+  font-family: "Rubik";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #9194a1;
+  line-height: 1.55em;
+  text-align: center;
+}
+@media only screen and (min-width: 750px) {
+  body main .download-container .download-text-container .download-desc-text {
+    width: 65%;
+    margin: 1em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .download-container .download-text-container .download-desc-text {
+    width: 50%;
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .download-container .download-cards-container {
+    height: 30em;
+    display: flex;
+    align-items: center;
+    margin: 2em 0 0 0;
+  }
+}
+body main .download-container .download-cards-container .download-card {
+  width: 80%;
+  margin: 3em 10%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.23);
+}
+@media only screen and (min-width: 700px) {
+  body main .download-container .download-cards-container .download-card {
+    width: 50%;
+    margin: 3em auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .download-container .download-cards-container .download-card {
+    width: 27.5%;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  body main .download-container .download-cards-container .download-card {
+    width: 25%;
+  }
+}
+body main .download-container .download-cards-container .download-card .download-card-img {
+  width: 35%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0 auto;
+  padding: 1.5em 0 0 0;
+}
+body main .download-container .download-cards-container .download-card .download-card-browser {
+  margin: 1em 0 0 0;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+}
+body main .download-container .download-cards-container .download-card .download-card-version {
+  margin: 0.5em 0 0 0;
+  font-family: "Rubik";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #9194a1;
+  line-height: 1.55em;
+  text-align: center;
+}
+body main .download-container .download-cards-container .download-card .download-card-button-container {
+  width: 100%;
+  margin: 0.75em 0 0 0;
+  padding: 0.75em 0;
+  border-top: 5px dotted #f5f5f8;
+}
+body main .download-container .download-cards-container .download-card .download-card-button-container .download-card-button {
+  width: 70%;
+  margin: 0.75em 15% 0.75em 15%;
+  padding: 1em 0.75em;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+body main #first-card {
+  align-self: flex-start;
+}
+body main #second-card {
+  align-self: center;
+}
+body main #third-card {
+  align-self: flex-end;
+}
+@media only screen and (min-width: 1000px) {
+  body main .faq-container {
+    width: 40em;
+    margin: 0 auto;
+  }
+}
+body main .faq-container .faq-text-container .faq-header-text {
+  width: 85%;
+  margin: 0 auto 0 auto;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 1.35em;
+  text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+  body main .faq-container .faq-text-container .faq-header-text {
+    font-size: 1.65em;
+  }
+}
+body main .faq-container .faq-text-container .faq-desc-text {
+  width: 85%;
+  margin: 1em auto 0 auto;
+  font-family: "Rubik";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #9194a1;
+  line-height: 1.55em;
+  text-align: center;
+}
+@media only screen and (min-width: 750px) {
+  body main .faq-container .faq-text-container .faq-desc-text {
+    width: 60%;
+    margin: 1em auto 2em auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .faq-container .faq-text-container .faq-desc-text {
+    width: 70%;
+    font-size: 1em;
+  }
+}
+body main .faq-container .faq-questions-container {
+  width: 95%;
+  margin: 0 auto;
+}
+body main .faq-container .faq-questions-container .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  border-bottom: 1px solid #9194a1;
+}
+@media only screen and (min-width: 400px) {
+  body main .faq-container .faq-questions-container .faq-question {
+    padding: 0.75em 0;
+  }
+}
+body main .faq-container .faq-questions-container .faq-question .faq-question-title {
+  font-family: "Rubik";
+  font-size: 0.85em;
+}
+@media only screen and (min-width: 400px) {
+  body main .faq-container .faq-questions-container .faq-question .faq-question-title {
+    font-size: 1em;
+  }
+}
+body main .faq-container .faq-questions-container .faq-question .faq-answer {
+  width: 100%;
+  margin: 1em auto 0 auto;
+  display: none;
+  text-align: left;
+  font-family: "Rubik";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #9194a1;
+  line-height: 1.75em;
+}
+body main .faq-container .faq-questions-container .faq-question:hover .faq-question-title {
+  color: #fa5757;
+}
+body main .faq-container .faq-questions-container .faq-question.active .faq-arrow {
+  transform: scaleY(-1);
+}
+body main .faq-container .faq-questions-container .faq-question.active .faq-arrow path {
+  stroke: #fa5757;
+}
+body main .faq-container .faq-questions-container .faq-question.active .faq-answer {
+  display: block;
+}
+body main .faq-container .faq-questions-container .faq-more-info {
+  display: block;
+  margin: 4em auto 0 auto;
+  padding: 1em 1.5em 1em 1.5em;
+}
+body footer .cta-container {
+  width: 90%;
+  margin: 3em 0 0 0;
+  padding: 3em 5% 0 5%;
+  background-color: #5368df;
+}
+body footer .cta-container .cta-text .cta-subtitle {
+  margin: 0 0 0.75em 0;
+  color: white;
+  font-family: "Rubik";
+  font-size: 0.8em;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+body footer .cta-container .cta-text .cta-title {
+  width: 90%;
+  margin: 0 5%;
+  color: white;
+  font-family: "Rubik";
+  font-size: 1.35em;
+  font-weight: 500;
+  text-align: center;
+}
+body footer .cta-container .cta-form {
+  margin: 2em 0 0 0;
+  padding-bottom: 3em;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .cta-container .cta-form {
+    width: 33em;
+    display: flex;
+    align-items: center;
+    margin: 2em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 600px) {
+  body footer .cta-container .cta-form .cta-email-container {
+    width: 75%;
+    margin: 0 auto 0 auto;
+    padding: 0 4% 0 0;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body footer .cta-container .cta-form .cta-email-container {
+    width: 65%;
+    margin: 0 auto 0 auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body footer .cta-container .cta-form .cta-email-container {
+    flex-basis: 12em;
+    flex-grow: 3;
+    margin: 0;
+  }
+}
+body footer .cta-container .cta-form .cta-email-container .cta-email {
+  width: 95%;
+  padding: 1.2em 0 1.2em 5%;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-family: "Rubik";
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 600px) {
+  body footer .cta-container .cta-form .cta-email-container .cta-email {
+    width: 100%;
+  }
+}
+body footer .cta-container .cta-form .cta-email-container .warning-icon {
+  display: none;
+}
+body footer .cta-container .cta-form .cta-email-container .warning-text {
+  display: none;
+}
+body footer .cta-container .cta-form .cta-email-container.highlighted {
+  height: 4.4em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: #fa5757;
+  border: 2px solid #fa5757;
+  border-radius: 6px;
+}
+@media only screen and (min-width: 600px) {
+  body footer .cta-container .cta-form .cta-email-container.highlighted {
+    width: 75%;
+    margin: 0 auto 0 auto;
+    padding: 0 4% 0 0;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body footer .cta-container .cta-form .cta-email-container.highlighted {
+    width: 65%;
+    padding: 0 3.5% 0 0;
+  }
+}
+body footer .cta-container .cta-form .cta-email-container.highlighted .warning-icon {
+  display: block;
+  position: relative;
+  top: -2.35em;
+  left: 90%;
+  z-index: 2;
+}
+@media only screen and (min-width: 600px) {
+  body footer .cta-container .cta-form .cta-email-container.highlighted .warning-icon {
+    left: 95%;
+  }
+}
+body footer .cta-container .cta-form .cta-email-container.highlighted .warning-text {
+  display: block;
+  position: relative;
+  top: -2.75em;
+  left: 1em;
+  color: white;
+  font-family: "Rubik";
+  font-size: 0.7em;
+  font-weight: 500;
+  font-size: italic;
+  z-index: 2;
+}
+body footer .cta-container .cta-form .cta-submit {
+  width: 100%;
+  margin-top: 0.75em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+@media only screen and (min-width: 600px) {
+  body footer .cta-container .cta-form .cta-submit {
+    width: 80%;
+    display: block;
+    margin: 1.5em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body footer .cta-container .cta-form .cta-submit {
+    width: 68.5%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body footer .cta-container .cta-form .cta-submit {
+    flex-basis: 6em;
+    flex-grow: 1;
+    margin: 0 0 0 1.5em;
+    padding: 1.2em;
+  }
+}
+body footer .footer-container {
+  padding: 2em 0 3em 0;
+  background-color: #252b46;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-container {
+    width: 85%;
+    padding: 1.5em 7.5% 1.5em 7.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+body footer .footer-container .footer-links {
+  width: 100%;
+  height: 11em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-container .footer-links {
+    width: 30em;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+body footer .footer-container .footer-links .footer-logo g path {
+  fill: white;
+}
+body footer .footer-container .footer-links .footer-link {
+  color: #f5f5f8;
+  text-transform: uppercase;
+  font-family: "Rubik";
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
+}
+body footer .footer-container .footer-links .footer-link:hover {
+  color: #fa5757;
+}
+body footer .footer-container #first-footer-link {
+  margin-top: 2em;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-container #first-footer-link {
+    margin: 0;
+  }
+}
+body footer .footer-container .footer-social {
+  width: 6em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3em auto 0 auto;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-container .footer-social {
+    width: 10em;
+    margin: 0;
+  }
+}
+body footer .footer-container .footer-social-link:hover {
+  color: red;
+}
+
+@keyframes nav-in {
+  0% {
+    top: -225vw;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes nav-out {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -225vw;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
