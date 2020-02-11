@@ -1,0 +1,295 @@
+
+$pink: hsl(322, 100%, 66%)
+
+$very-pale-cyan: hsl(193, 100%, 96%)
+$very-dark-cyan: hsl(192, 100%, 9%)
+$grayish-blue: hsl(208, 11%, 55%)
+
+$heading-font: "Poppins"
+$main-font: "Open Sans"
+
+@mixin desktop-breakpoint
+  @media only screen and (min-width: 1000px)
+    @content
+
+body
+  .content-button
+    padding: 0.5em 1em
+    font-family: $main-font
+    font-weight: 700
+    font-size: 0.9em
+    border: none
+    border-radius: 1.25em
+  .content-button.white
+    background-color: white
+    color: $very-dark-cyan
+  .content-button.pink
+    background-color: $pink
+    color: white
+  header
+    width: 90%
+    position: absolute
+    top: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1.5em 5%
+    background-color: transparent
+    @include desktop-breakpoint
+      width: 85%
+      padding: 2em 7.5%
+    .header-logo
+      width: auto
+      height: 1.1em
+      @include desktop-breakpoint
+        height: 1.5em
+    .header-button
+      @include desktop-breakpoint
+        padding: 1em 3em
+  main
+    .hero-container
+      width: 85%
+      padding: 4em 7.5% 2em 7.5%
+      background-color: $very-pale-cyan
+      background-image: url("../../images/bg-hero-mobile.svg")
+      background-repeat: no-repeat
+      background-size: cover
+      @include desktop-breakpoint
+        width: 90%
+        display: flex
+        align-items: flex-start
+        padding: 8em 5% 3em 5%
+        background-image: url("../../images/bg-hero-desktop.svg")
+      .hero-text-container
+        width: 100%
+        @include desktop-breakpoint
+          margin-top: 2em
+        .hero-title
+          margin: 1em 0 0.5em 0
+          font-family: $heading-font
+          font-size: 1.5em
+          text-align: center
+          color: $very-dark-cyan
+          line-height: 1.5em
+          @include desktop-breakpoint
+            font-size: 2.25em
+            text-align: left
+        @media only screen and (min-width: 1300px)
+          width: 60%
+        .hero-desc
+          font-family: $main-font
+          font-size: 0.9em
+          text-align: center
+          color: $very-dark-cyan
+          @include desktop-breakpoint
+            width: 90%
+            text-align: left
+            font-size: 1em
+        @media only screen and (min-width: 1300px)
+          width: 70%
+        .hero-button
+          width: 70%
+          margin: 1em 15% 0 15%
+          padding: 0.75em 1.5em
+          text-align: center
+          @media only screen and (min-width: 600px)
+            width: 50%
+            margin: 1em 25% 0 25%
+          @include desktop-breakpoint
+            width: 60%
+            margin: 1em 0 0 0
+            padding-top: 1em
+            padding-bottom: 1em
+          @media only screen and (min-width: 1200px)
+            width: 50%
+      .hero-img-container
+        width: 100%
+        margin: 3em 0 0 0
+        @media only screen and (min-width: 600px)
+          width: 80%
+          margin: 3em auto 0 auto
+        @media only screen and (min-width: 800px)
+          width: 65%
+        @include desktop-breakpoint
+          margin: 0
+          width: 100%
+        @media only screen and (min-width: 1300px)
+          width: 80%
+          margin-left: 5%
+        .hero-img
+          width: 100%
+    .cards-container
+      width: 90%
+      margin: 3em 5% 0 5%
+      .content-card
+        width: 90%
+        margin: 3em 0
+        padding: 2em 5% 1.5em 5%
+        -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.12)
+        -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.12)
+        box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.12)
+        border-radius: 10px
+        line-height: 1.4em
+        @media only screen and (min-width: 600px)
+          width: 70%
+          margin: 3em auto
+        @media only screen and (min-width: 800px)
+          width: 55%
+        @include desktop-breakpoint
+          width: 90%
+          display: flex
+          flex-direction: row-reverse
+          justify-content: space-between
+          align-items: center
+          padding: 2em 5%
+        @media only screen and (min-width: 1200px)
+          width: 80%
+          padding: 2em 5%
+        .content-card-img
+          width: 80%
+          display: block
+          margin: 0 auto
+          @include desktop-breakpoint
+            width: 20em
+            margin: 0
+        .content-card-title
+          text-align: center
+          font-family: $heading-font
+          font-size: 1.25em
+          color: $very-dark-cyan
+          @include desktop-breakpoint
+            width: 70%
+            margin: 1em auto
+            text-align: left
+            font-size: 1.5em
+        .content-card-desc
+          width: 90%
+          margin: 0 auto
+          text-align: center
+          font-family: $main-font
+          font-size: 0.9em
+          color: $grayish-blue
+          @include desktop-breakpoint
+            width: 70%
+            text-align: left
+            line-height: 1.4em
+      .content-card:nth-child(2)
+        @include desktop-breakpoint
+          flex-direction: row
+    .cta-container
+      width: 80%
+      height: 6em
+      position: relative
+      margin: 2em auto -3em auto
+      padding: 1em 5% 1em 5%
+      -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.12)
+      -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.12)
+      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.12)
+      border-radius: 13px
+      z-index: 2
+      background-color: white
+      @media only screen and (min-width: 600px)
+        width: 60%
+      @media only screen and (min-width: 800px)
+        width: 45%
+      @include desktop-breakpoint
+        width: 55%
+        height: 9em
+        margin-bottom: -4em
+        padding: 0.5em 5% 1em 5% 
+      .cta-title
+        font-family: $heading-font
+        color: $very-dark-cyan
+        text-align: center
+        font-size: 0.9em
+        @include desktop-breakpoint
+          font-size: 1.5em
+      .cta-button
+        display: block
+        margin: 0 auto
+        padding: 1em 1.5em
+        font-size: 0.9em
+        @include desktop-breakpoint
+          padding: 1.5em 5em
+  footer
+    width: 90%
+    position: relative
+    padding: 5em 5% 1em 5%
+    background-color: $very-dark-cyan
+    z-index: -1
+    @include desktop-breakpoint
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
+      padding: 7em 5% 2em 5%
+    .footer-logo
+      width: auto
+      height: 1.25em
+      @include desktop-breakpoint
+        height: 1.75em
+        margin-right: auto
+        margin-bottom: 1em
+    .footer-logo g path
+      fill: white
+    .footer-content
+      @include desktop-breakpoint
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+    .contact-info
+      width: 100%
+      @include desktop-breakpoint
+        width: 40%
+      .contact-info-section
+        width: 100%
+        display: flex
+        align-items: flex-start
+        margin: 1.5em 0 1.5em 0
+        @media only screen and (min-width: 700px)
+          width: 70%
+          margin: 1.5em 30% 1.5em 0
+        .contact-icon
+          margin-right: 1em
+        .contact-info-text
+          margin: 0
+          padding: 0
+          color: white
+          font-family: $main-font
+          font-size: 0.9em
+          @media only screen and (min-width: 500px)
+            font-size: 1em
+    .footer-link-section
+      margin-top: 2em
+      @media only screen and (min-width: 500px)
+        margin: 0 2em
+      .footer-link
+        font-family: $main-font
+        font-size: 0.9em
+        color: white
+        @media only screen and (min-width: 500px)
+          font-size: 1em
+    .footer-social-links
+      width: 10em
+      display: flex
+      justify-content: space-between
+      margin: 2em auto 0 auto
+      @include desktop-breakpoint
+        margin-top: 0.5em
+      .footer-social-link
+        width: 1em
+        height: 1em
+        margin: 0
+        padding: 0.4em
+        color: white
+        border: 1px solid white
+        border-radius: 50%
+    .footer-attribution
+      margin-top: 2em
+      color: white
+      font-size: 0.8em
+      font-family: $main-font
+      text-align: center
+      @include desktop-breakpoint
+        width: 100%
+        text-align: right
+        font-size: 0.7em

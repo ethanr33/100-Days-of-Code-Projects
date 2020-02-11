@@ -1,0 +1,427 @@
+body .content-button {
+  padding: 0.5em 1em;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 1.25em;
+}
+body .content-button.white {
+  background-color: white;
+  color: #00252e;
+}
+body .content-button.pink {
+  background-color: #ff52bf;
+  color: white;
+}
+body header {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 5%;
+  background-color: transparent;
+}
+@media only screen and (min-width: 1000px) {
+  body header {
+    width: 85%;
+    padding: 2em 7.5%;
+  }
+}
+body header .header-logo {
+  width: auto;
+  height: 1.1em;
+}
+@media only screen and (min-width: 1000px) {
+  body header .header-logo {
+    height: 1.5em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body header .header-button {
+    padding: 1em 3em;
+  }
+}
+body main .hero-container {
+  width: 85%;
+  padding: 4em 7.5% 2em 7.5%;
+  background-color: #ebfbff;
+  background-image: url("../../images/bg-hero-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    padding: 8em 5% 3em 5%;
+    background-image: url("../../images/bg-hero-desktop.svg");
+  }
+}
+body main .hero-container .hero-text-container {
+  width: 100%;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container {
+    margin-top: 2em;
+  }
+}
+body main .hero-container .hero-text-container .hero-title {
+  margin: 1em 0 0.5em 0;
+  font-family: "Poppins";
+  font-size: 1.5em;
+  text-align: center;
+  color: #00252e;
+  line-height: 1.5em;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-title {
+    font-size: 2.25em;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body main .hero-container .hero-text-container {
+    width: 60%;
+  }
+}
+body main .hero-container .hero-text-container .hero-desc {
+  font-family: "Open Sans";
+  font-size: 0.9em;
+  text-align: center;
+  color: #00252e;
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-desc {
+    width: 90%;
+    text-align: left;
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body main .hero-container .hero-text-container {
+    width: 70%;
+  }
+}
+body main .hero-container .hero-text-container .hero-button {
+  width: 70%;
+  margin: 1em 15% 0 15%;
+  padding: 0.75em 1.5em;
+  text-align: center;
+}
+@media only screen and (min-width: 600px) {
+  body main .hero-container .hero-text-container .hero-button {
+    width: 50%;
+    margin: 1em 25% 0 25%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-text-container .hero-button {
+    width: 60%;
+    margin: 1em 0 0 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body main .hero-container .hero-text-container .hero-button {
+    width: 50%;
+  }
+}
+body main .hero-container .hero-img-container {
+  width: 100%;
+  margin: 3em 0 0 0;
+}
+@media only screen and (min-width: 600px) {
+  body main .hero-container .hero-img-container {
+    width: 80%;
+    margin: 3em auto 0 auto;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body main .hero-container .hero-img-container {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .hero-container .hero-img-container {
+    margin: 0;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  body main .hero-container .hero-img-container {
+    width: 80%;
+    margin-left: 5%;
+  }
+}
+body main .hero-container .hero-img-container .hero-img {
+  width: 100%;
+}
+body main .cards-container {
+  width: 90%;
+  margin: 3em 5% 0 5%;
+}
+body main .cards-container .content-card {
+  width: 90%;
+  margin: 3em 0;
+  padding: 2em 5% 1.5em 5%;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  line-height: 1.4em;
+}
+@media only screen and (min-width: 600px) {
+  body main .cards-container .content-card {
+    width: 70%;
+    margin: 3em auto;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body main .cards-container .content-card {
+    width: 55%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .cards-container .content-card {
+    width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 5%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body main .cards-container .content-card {
+    width: 80%;
+    padding: 2em 5%;
+  }
+}
+body main .cards-container .content-card .content-card-img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1000px) {
+  body main .cards-container .content-card .content-card-img {
+    width: 20em;
+    margin: 0;
+  }
+}
+body main .cards-container .content-card .content-card-title {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 1.25em;
+  color: #00252e;
+}
+@media only screen and (min-width: 1000px) {
+  body main .cards-container .content-card .content-card-title {
+    width: 70%;
+    margin: 1em auto;
+    text-align: left;
+    font-size: 1.5em;
+  }
+}
+body main .cards-container .content-card .content-card-desc {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 0.9em;
+  color: #808d99;
+}
+@media only screen and (min-width: 1000px) {
+  body main .cards-container .content-card .content-card-desc {
+    width: 70%;
+    text-align: left;
+    line-height: 1.4em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .cards-container .content-card:nth-child(2) {
+    flex-direction: row;
+  }
+}
+body main .cta-container {
+  width: 80%;
+  height: 6em;
+  position: relative;
+  margin: 2em auto -3em auto;
+  padding: 1em 5% 1em 5%;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 13px;
+  z-index: 2;
+  background-color: white;
+}
+@media only screen and (min-width: 600px) {
+  body main .cta-container {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  body main .cta-container {
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body main .cta-container {
+    width: 55%;
+    height: 9em;
+    margin-bottom: -4em;
+    padding: 0.5em 5% 1em 5%;
+  }
+}
+body main .cta-container .cta-title {
+  font-family: "Poppins";
+  color: #00252e;
+  text-align: center;
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 1000px) {
+  body main .cta-container .cta-title {
+    font-size: 1.5em;
+  }
+}
+body main .cta-container .cta-button {
+  display: block;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 1000px) {
+  body main .cta-container .cta-button {
+    padding: 1.5em 5em;
+  }
+}
+body footer {
+  width: 90%;
+  position: relative;
+  padding: 5em 5% 1em 5%;
+  background-color: #00252e;
+  z-index: -1;
+}
+@media only screen and (min-width: 1000px) {
+  body footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 7em 5% 2em 5%;
+  }
+}
+body footer .footer-logo {
+  width: auto;
+  height: 1.25em;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-logo {
+    height: 1.75em;
+    margin-right: auto;
+    margin-bottom: 1em;
+  }
+}
+body footer .footer-logo g path {
+  fill: white;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+body footer .contact-info {
+  width: 100%;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .contact-info {
+    width: 40%;
+  }
+}
+body footer .contact-info .contact-info-section {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin: 1.5em 0 1.5em 0;
+}
+@media only screen and (min-width: 700px) {
+  body footer .contact-info .contact-info-section {
+    width: 70%;
+    margin: 1.5em 30% 1.5em 0;
+  }
+}
+body footer .contact-info .contact-info-section .contact-icon {
+  margin-right: 1em;
+}
+body footer .contact-info .contact-info-section .contact-info-text {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 500px) {
+  body footer .contact-info .contact-info-section .contact-info-text {
+    font-size: 1em;
+  }
+}
+body footer .footer-link-section {
+  margin-top: 2em;
+}
+@media only screen and (min-width: 500px) {
+  body footer .footer-link-section {
+    margin: 0 2em;
+  }
+}
+body footer .footer-link-section .footer-link {
+  font-family: "Open Sans";
+  font-size: 0.9em;
+  color: white;
+}
+@media only screen and (min-width: 500px) {
+  body footer .footer-link-section .footer-link {
+    font-size: 1em;
+  }
+}
+body footer .footer-social-links {
+  width: 10em;
+  display: flex;
+  justify-content: space-between;
+  margin: 2em auto 0 auto;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-social-links {
+    margin-top: 0.5em;
+  }
+}
+body footer .footer-social-links .footer-social-link {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0.4em;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+body footer .footer-attribution {
+  margin-top: 2em;
+  color: white;
+  font-size: 0.8em;
+  font-family: "Open Sans";
+  text-align: center;
+}
+@media only screen and (min-width: 1000px) {
+  body footer .footer-attribution {
+    width: 100%;
+    text-align: right;
+    font-size: 0.7em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
