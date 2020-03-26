@@ -1,0 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 1024px) {    
+     #bg-img{         
+         background-image: url("../images/bg-header-desktop.svg");
+     } 
+}

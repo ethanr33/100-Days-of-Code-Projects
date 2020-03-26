@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Job Listings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet">
+  <link href="css/output.css" type="text/css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js" integrity="sha256-L/S5mZS8SPJVWoKym3Zwgf2f3/s3X3MaZ7QBA9HdnN8=" crossorigin="anonymous"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script type="text/babel" src="script.js"></script>
+</head>
+<body class="font-main bg-cyan-background">
+  <div class="w-full bg-cyan-desaturated relative top-0 -z-10">
+    <img id="bg-img" src="images/bg-header-mobile.svg" alt="background" class="w-full">
+  </div>
+  <div id="tag-main-container" class="bg-white w-10/12 h-24 px-6 mx-auto -mt-12 flex justify-between items-center relative z-10 rounded-md">
+    <div id="tag-container" class="h-auto flex items-center flex-wrap">
+      <!-- 
+        Tags go here
+      -->
+    </div>
+    <p id="clear-query" class="text-cyan-desaturated text-xs lg:text-base font-bold hover:underline">Clear</p>
+  </div>
+  <div class="card-container flex flex-col w-10/12 lg:w-9/12 mx-auto mt-16 mb-16">
+    <!--
+      Photosnap
+    -->
+    <div data-tags="Frontend, Senior, HTML, CSS, JavaScript" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/photosnap.svg" alt="Photosnap logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Photosnap</p>
+            <p class="text-white bg-cyan-desaturated font-bold text-xs md:text-sm lg:text-md px-2 pt-1 pb-0 mr-2 rounded-full text-center align-bottom">NEW!</p>
+            <p class="text-white bg-cyan-verydark font-bold text-xs md:text-sm lg:text-md px-2 pt-1 pb-0 mr-2 rounded-full text-center align-bottom">FEATURED</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Senior Frontend Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">1d ago &#8226; Full Time &#8226; USA only</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Frontend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Senior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">HTML</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">CSS</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+      </div>
+    </div>
+    <!-- 
+      Manage
+    -->
+    <div data-tags="Fullstack, Midweight, Python, React" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/manage.svg" alt="Manage logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Manage</p>
+            <p class="text-white bg-cyan-desaturated font-bold text-xs md:text-sm lg:text-md px-2 pt-1 pb-0 mr-2 rounded-full text-center align-bottom">NEW!</p>
+            <p class="text-white bg-cyan-verydark font-bold text-xs md:text-sm lg:text-md px-2 pt-1 pb-0 mr-2 rounded-full text-center align-bottom">FEATURED</p>
+          </div>
+          <p class="text-cyan-verydark hover:text-cyan-desaturated hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Fullstack Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">1d ago &#8226; Part Time &#8226; Remote</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Fullstack</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Midweight</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Python</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">React</p>
+      </div>
+    </div>
+    <!-- 
+      Account
+    -->
+    <div data-tags="Frontend, Junior, React, SASS, JavaScript" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/account.svg" alt="Account logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Account</p>
+            <p class="text-white bg-cyan-desaturated font-bold text-xs md:text-sm lg:text-md px-2 pt-1 pb-0 mr-2 rounded-full text-center align-bottom">NEW!</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Junior Frontend Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">2d ago &#8226; Part Time &#8226; USA only</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Frontend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Junior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">React</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">SASS</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+      </div>
+    </div>
+    <!--
+      MyHome
+    -->
+    <div data-tags="Frontend, Junior, CSS, JavaScript" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/myhome.svg" alt="MyHome logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">MyHome</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Senior Frontend Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">5d ago &#8226; Contract &#8226; USA only</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Frontend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Junior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">CSS</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+      </div>
+    </div>
+    <!--
+      Loop Studios
+    -->
+    <div data-tags="Fullstack, Midweight, JavaScript, SASS, Ruby" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/loop-studios.svg" alt="Loop Studios logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Loop Studios</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Software Engineer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">1w ago &#8226; Full Time &#8226; Worldwide</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Fullstack</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Midweight</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">SASS</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Ruby</p>
+      </div>
+    </div>
+    <!--
+      FaceIt
+    -->
+    <div data-tags="Backend, Junior, Ruby, RoR" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/faceit.svg" alt="FaceIt logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">FaceIt</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Junior Backend Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">2w ago &#8226; Full Time &#8226; UK only</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Backend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Junior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Ruby</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">RoR</p>
+      </div>
+    </div>
+    <!-- 
+      Shortly
+    -->
+    <div data-tags="Frontend, Junior, HTML, SASS, JavaScript" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/shortly.svg" alt="Shortly logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Shortly</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Junior Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">2w ago &#8226; Full Time &#8226; Worldwide</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Frontend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Junior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">HTML</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">SASS</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+      </div>
+    </div>
+    <!-- 
+      Insure
+    -->
+    <div data-tags='Frontend, Junior, Vue, JavaScript, SASS' class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/insure.svg" alt="Insure logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Insure</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Junior Frontend Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">2w ago &#8226; Full Time &#8226; USA Only</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Frontend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Junior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Vue</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">SASS</p>
+      </div>
+    </div>
+    <!-- 
+      Eyecam Co.
+    -->
+    <div data-tags="Fullstack, Midweight, JavaScript, Django, Python" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/eyecam-co.svg" alt="Eyecam Co. logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">Eyecam Co.</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Full Stack Engineer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">3w ago &#8226; Full Time &#8226; Worldwide</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Fullstack</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Midweight</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Django</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Python</p>
+      </div>
+    </div>
+    <!-- 
+      The Air Filter Company
+    -->
+    <div data-tags="Frontend, Senior, HTML, CSS, JavaScript" class="card lg:flex lg:flex-row lg:justify-between lg:items-center w-full bg-white pb-4 lg:py-8 my-8 rounded-md border-l-6 border-cyan-desaturated shadow-lg">
+      <div class="lg:flex lg:items-center ml-4 mb-1 lg:mb-0">
+        <img src="images/the-air-filter-company.svg" alt="The air filter company logo" class="w-12 md:w-20 lg:w-24 xl:w-32 lg:h-24 xl:h-32 flex-none -mt-5 md:-mt-10 lg:mt-0 ml-1">
+        <div class="md:w-auto lg:ml-3 xl:ml-5">
+          <div class="w-auto lg:w-48 flex items-center justify-start lg:items-center mt-2 lg:mt-0">
+            <p class="w-auto text-cyan-desaturated font-bold text-sm md:text-base lg:text-lg mr-2">The Air Filter Company</p>
+          </div>
+          <p class="text-cyan-verydark  hover:text-cyan-desaturated font-bold text-sm md:text-md lg:text-lg mt-2 lg:mt-1 lg:w-auto">Senior Frontend Developer</p>
+          <p class="text-cyan-dark text-xs md:text-sm lg:text-md mt-2 lg:mt-1">1mo ago &#8226; Part Time &#8226; Worldwide</p>
+        </div>
+      </div>
+      <div class="w-11/12 lg:w-auto d-flex justify-start flex-wrap lg:items-center border-t lg:border-none border-cyan-dark border-solid ml-4 lg:mr-3 mt-2 lg:m-0">
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-4 lg:mt-0">Frontend</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">Senior</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">HTML</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">CSS</p>
+        <p class="w-auto job-tag inline-block hover:text-cyan-background hover:bg-cyan-desaturated text-cyan-desaturated bg-cyan-background font-bold text-xs md:text-base text-center tracking-tight rounded-sm p-1 px-2 pb-0 mr-4 mt-3 lg:mt-0">JavaScript</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
