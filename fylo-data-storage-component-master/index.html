@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Fylo data storage component</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="public/output.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="bg-no-repeat bg-cover lg:bg-very-dark-blue lg:flex lg:justify-center lg:items-center lg:bg-auto">
+  <div id="bg-img" class=""></div>
+  <div id="container" class="section absolute w-full mb-24 lg:mb-0 z-10">
+    <div class="lg:grid lg:grid-rows-1">
+    <div class="subsection bg-dark-blue px-6 py-10 rounded-tl-lg rounded-br-lg rounded-bl-lg section-container lg:mr-8">
+        <div>
+          <img src="images/logo.svg" alt="Logo" class="h-12 w-auto">
+        </div>
+        <div class="icon-row flex justify-between items-center mt-10 w-48">
+          <div class="icon-container bg-very-dark-blue flex justify-center items-center rounded-lg">
+            <img src="images/icon-document.svg#svgView(viewBox(0,0,20,24))" class="box-content" style="width: 25px; height: 30px;">   
+          </div>
+          <div class="icon-container bg-very-dark-blue flex justify-center items-center rounded-lg">
+            <img src="images/icon-folder.svg#svgView(viewBox(0,0,24,20))" class="box-content" style="width: 30px; height: 25px;">   
+          </div>
+          <div class="icon-container bg-very-dark-blue flex justify-center items-center rounded-lg">
+            <img src="images/icon-upload.svg#svgView(viewBox(0,0,24,16))" class="box-content" style="width: 30px; height: 20px;">   
+          </div>
+      </div>
+    </div>
+    <div id="second-containter" class="bg-dark-blue rounded-lg mt-12 lg:mt-20 py-3 md:py-4 md:px-3 section-container">
+      <div class="text-center w-5/6 mx-auto">
+        <p class="inline text-pale-blue font-display">You've used </p><p class="inline font-bold text-pale-blue font-display">815 GB</p><p class="inline text-pale-blue font-display"> of your storage</p>
+      </div>
+      <div id="progress-bar" class="bg-very-dark-blue w-11/12 mx-auto rounded-full mt-3 h-6">
+        
+      </div>
+      <div class="flex justify-between align-center w-5/6 mx-auto mt-3 pb-8 lg:pb-0">
+        <p class="inline font-bold text-pale-blue font-display lg_pb-0">0 GB</p>
+        <p class="inline font-bold text-pale-blue font-display lg:pb-0">1000 GB</p>
+      </div>
+      <div id="gb-left" class="lg:absolute bg-white w-40 lg:w-40 flex justify-center items-center py-2 lg:pb-8 px-3 lg:px-1 rounded-lg mx-auto -mb-12 lg:mb-0 lg:items-center">
+        <p class="inline font-extrabold font-display text-4xl mr-2">185</p>
+        <p class="inline font-extrabold text-grayish-blue font-display text-sm lg:self-center">GB LEFT</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>-->
+</body>
+</html>
